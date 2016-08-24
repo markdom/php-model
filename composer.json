@@ -1,0 +1,27 @@
+{
+  "name": "markdom/model",
+  "type": "library",
+  "description": "Domain model implementations written in PHP",
+  "keywords": [
+    "Markdom",
+    "Model"
+  ],
+  "homepage": "http://markenwerk.net/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Brecht-Precht",
+      "email": "mb@markenwerk.net",
+      "homepage": "http://markenwerk.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Markdom\\Model\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.3",
+    "markdom/model-interface": "^1.0.1"
+  }
+}

@@ -1,0 +1,95 @@
+<?php
+
+namespace Markdom\Model\Content;
+
+use Markdom\Model\Common\AbstractNode;
+use Markdom\Model\Common\EmptyCountableIterator;
+use Markdom\Model\Exception\MarkdomModelException;
+use Markdom\ModelInterface\Block\ContentParentBlockInterface;
+use Markdom\ModelInterface\Common\CountableIteratorInterface;
+use Markdom\ModelInterface\Common\NodeInterface;
+use Markdom\ModelInterface\Content\ContentInterface;
+use Markdom\ModelInterface\Content\ContentParentInterface;
+
+/**
+ * Class AbstractContent
+ *
+ * @package Markenwerk\Markdom\Model\Content
+ */
+abstract class AbstractContent extends AbstractNode implements ContentInterface
+{
+
+	/**
+	 * @var ContentParentInterface
+	 */
+	private $parent;
+
+	/**
+	 * @return string
+	 */
+	final public function getNodeType()
+	{
+		return NodeInterface::NODE_TYPE_CONTENT;
+	}
+
+	/**
+	 * @return int
+	 */
+	final public function getIndex()
+	{
+		return $this->getBlock()->getContents()->indexOf($this);
+	}
+
+	/**
+	 * @return ContentParentInterface
+	 */
+	final public function getParent()
+	{
+		return $this->parent;
+	}
+
+	/**
+	 * @return ContentParentBlockInterface
+	 */
+	final public function getBlock()
+	{
+		return $this->getParent()->getBlock();
+	}
+
+	/**
+	 * @return CountableIteratorInterface
+	 */
+	public function getChildren()
+	{
+		return new EmptyCountableIterator();
+	}
+
+	/**
+	 * @param ContentParentInterface $contentParent
+	 * @return $this
+	 * @throws MarkdomModelException
+	 */
+	final public function onAttach(ContentParentInterface $contentParent)
+	{
+		if (!is_null($this->parent)) {
+			throw new MarkdomModelException('Content is already attached');
+		}
+		$this->parent = $contentParent;
+		return $this;
+	}
+
+	/**
+	 * @return $this
+	 * @throws MarkdomModelException
+	 */
+	final public function onDetach()
+	{
+		if (is_null($this->parent)) {
+			throw new MarkdomModelException('Content is already detached');
+		}
+		$this->parent = null;
+		return $this;
+	}
+
+
+}
