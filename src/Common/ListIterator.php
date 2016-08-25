@@ -7,7 +7,7 @@ namespace Markdom\Model\Common;
  *
  * @package Markenwerk\Markdom\Model\Common
  */
-class ListIterator implements \Iterator
+final class ListIterator implements \Iterator
 {
 
 	/**
