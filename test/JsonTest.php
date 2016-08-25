@@ -19,11 +19,14 @@ class JsonTest extends \PHPUnit_Framework_TestCase
 		// Dispatch a JSON file as Markdom Document
 		$handler = new ModelHandler();
 		$dispatcher = new JsonDispatcher($handler);
-		$dispatcher->process(file_get_contents(__DIR__.'/test-data.json'));
+		$dispatcher->process(file_get_contents(__DIR__ . '/test-data.json'));
 		$document = $handler->getResult();
 
 		// Dispatch the Markdom Document as JSON string
-		$handler = new JsonHandler(true, true);
+		$handler = new JsonHandler();
+		$handler
+			->setPrettyPrint(true)
+			->setEscapeUnicode(true);
 		$document->handle($handler);
 		$jsonString = $handler->getResult();
 		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.json'), $jsonString);

@@ -17,7 +17,7 @@ class XmlTest extends \PHPUnit_Framework_TestCase
 	public function testParseHandle()
 	{
 		// Dispatch a XML file as Markdom Document
-		$xmlString = file_get_contents(__DIR__.'/test-data.xml');
+		$xmlString = file_get_contents(__DIR__ . '/test-data.xml');
 		$xmlDocument = new \DOMDocument();
 		$xmlDocument->loadXML($xmlString);
 		$handler = new ModelHandler();
@@ -26,7 +26,8 @@ class XmlTest extends \PHPUnit_Framework_TestCase
 		$document = $handler->getResult();
 
 		// Dispatch the Markdom Document as XML string
-		$handler = new XmlHandler(false);
+		$handler = new XmlHandler();
+		$handler->setPrettyPrint(false);
 		$document->handle($handler);
 		$xmlString = $handler->getResult()->saveXML();
 		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.xml'), $xmlString);
