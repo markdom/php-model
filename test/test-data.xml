@@ -43,7 +43,7 @@
     <Emphasis level="1">
       <Text><![CDATA[nested ]]></Text>
       <Emphasis level="2">
-        <Link uri="http://google.de" title="">
+        <Link uri="http://google.de" title="Link to Google">
           <Text>emphasises</Text>
         </Link>
       </Emphasis>
