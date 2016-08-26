@@ -159,6 +159,7 @@
                                 {
                                     "type": "Link",
                                     "uri": "http:\/\/google.de",
+                                    "title": null,
                                     "contents": [
                                         {
                                             "type": "Text",

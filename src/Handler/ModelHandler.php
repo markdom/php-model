@@ -371,11 +371,12 @@ class ModelHandler implements HandlerInterface
 
 	/**
 	 * @param string $uri
+	 * @param string $title
 	 * @return void
 	 */
-	public function onLinkContentBegin($uri)
+	public function onLinkContentBegin($uri, $title = null)
 	{
-		$link = new LinkContent($uri);
+		$link = new LinkContent($uri, $title);
 		/** @var ContentParentInterface $parent */
 		$parent = $this->contentParentStack->get();
 		$parent->getContents()->append($link);
@@ -384,9 +385,10 @@ class ModelHandler implements HandlerInterface
 
 	/**
 	 * @param string $uri
+	 * @param string $title
 	 * @return void
 	 */
-	public function onLinkContentEnd($uri)
+	public function onLinkContentEnd($uri, $title = null)
 	{
 		$this->contentParentStack->pop();
 	}

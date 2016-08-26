@@ -22,13 +22,20 @@ final class LinkContent extends AbstractContent implements LinkContentInterface
 	private $uri;
 
 	/**
+	 * @var string
+	 */
+	private $title;
+
+	/**
 	 * LinkContent constructor.
 	 *
 	 * @param string $uri
+	 * @param string $title
 	 */
-	public function __construct($uri)
+	public function __construct($uri, $title = null)
 	{
 		$this->uri = $uri;
+		$this->title = $title;
 	}
 
 	/**
@@ -52,6 +59,24 @@ final class LinkContent extends AbstractContent implements LinkContentInterface
 	/**
 	 * @return string
 	 */
+	public function getTitle()
+	{
+		return $this->title;
+	}
+
+	/**
+	 * @param string $title
+	 * @return $this
+	 */
+	public function setTitle($title)
+	{
+		$this->title = $title;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
 	final public function getContentType()
 	{
 		return ContentInterface::TYPE_LINK;
@@ -63,7 +88,7 @@ final class LinkContent extends AbstractContent implements LinkContentInterface
 	public function onHandle(HandlerInterface $markdomHandler)
 	{
 		$markdomHandler->onContentBegin($this->getContentType());
-		$markdomHandler->onLinkContentBegin($this->getUri());
+		$markdomHandler->onLinkContentBegin($this->getUri(), $this->getTitle());
 		$markdomHandler->onContentsBegin();
 		for ($i = 0, $n = $this->getContents()->size(); $i < $n; $i++) {
 			$content = $this->getContents()->get($i);
@@ -73,7 +98,7 @@ final class LinkContent extends AbstractContent implements LinkContentInterface
 			}
 		}
 		$markdomHandler->onContentsEnd();
-		$markdomHandler->onLinkContentEnd($this->getUri());
+		$markdomHandler->onLinkContentEnd($this->getUri(), $this->getTitle());
 		$markdomHandler->onContentEnd($this->getContentType());
 	}
 
