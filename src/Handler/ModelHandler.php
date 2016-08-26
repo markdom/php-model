@@ -4,6 +4,7 @@ namespace Markdom\Model\Handler;
 
 use Markdom\HandlerInterface\HandlerInterface;
 use Markdom\Model\Block\CodeBlock;
+use Markdom\Model\Block\CommentBlock;
 use Markdom\Model\Block\DivisionBlock;
 use Markdom\Model\Block\Document;
 use Markdom\Model\Block\HeadingBlock;
@@ -103,6 +104,17 @@ class ModelHandler implements HandlerInterface
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
 		$parent->getBlocks()->append(new CodeBlock($code, $hint));
+	}
+
+	/**
+	 * @param string $comment
+	 * @return void
+	 */
+	public function onCommentBlock($comment)
+	{
+		/** @var BlockParentInterface $parent */
+		$parent = $this->blockParentStack->get();
+		$parent->getBlocks()->append(new CommentBlock($comment));
 	}
 
 	/**

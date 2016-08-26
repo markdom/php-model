@@ -1,6 +1,333 @@
 <?xml version="1.0"?>
-<Document version="1.0" xmlns="http://schema.markenwerk.net/markdom-1.0.xsd"><Heading level="1"><Text>some markdown</Text></Heading><Heading level="2"><Text>some markdown</Text></Heading><Heading level="3"><Text>some markdown</Text></Heading><Heading level="4"><Text>some markdown</Text></Heading><Heading level="5"><Text>some markdown</Text></Heading><Heading level="6"><Text>some markdown</Text></Heading><Paragraph><Text>in markdown s&#xFC;ntax</Text><LineBreak hard="false"/><Text>a simple para-graph can</Text><LineBreak hard="false"/><Text>span more than one line</Text></Paragraph><Paragraph><Text><![CDATA[this ]]></Text><Emphasis level="1"><Text>is</Text></Emphasis><Text><![CDATA[ a not so simple ]]></Text><Emphasis level="2"><Text>paragraph</Text></Emphasis><Text><![CDATA[ with different kinds of ]]></Text><Code>emphasises</Code><Text><![CDATA[ ]]></Text><Code>&#x200B;`&#x200B;</Code><Text><![CDATA[, ~~an obolete section~~, and even ]]></Text><Emphasis level="1"><Text><![CDATA[nested ]]></Text><Emphasis level="2"><Link uri="http://google.de"><Text>emphasises</Text></Link></Emphasis></Emphasis></Paragraph><Paragraph><Image uri="test.png" title="Title" alternative="alt text"/></Paragraph><Heading level="3"><Text>non</Text><Text>-trivial nested list</Text></Heading><UnorderedList><ListItem><OrderedList startIndex="1"><ListItem><Paragraph><Text>item number one, subitem one</Text><Text><![CDATA[. ]]></Text><Emphasis level="2"><Text>an introduction</Text></Emphasis><Text/><LineBreak hard="true"/><Text>this one covers more than one line</Text><LineBreak hard="true"/><Text>in fact, it covers three lines</Text></Paragraph><UnorderedList><ListItem><Paragraph><Text>item number one, subitem one, subsubitem one</Text><Text>. the 1st paragraph</Text><LineBreak hard="false"/><Text>this one covers more than one line</Text><LineBreak hard="false"/><Text>in fact, it covers three lines</Text></Paragraph><Quote><Paragraph><Text>item number one, subitem one, subsubitem one</Text><Text>. the 2st paragraph</Text><LineBreak hard="false"/><Text>this one covers more than one line</Text><LineBreak hard="false"/><Text>in fact, it covers three lines</Text></Paragraph></Quote></ListItem><ListItem><Paragraph><Text>item number one, subitem one, subsubitem two</Text><Text>. the 1st paragraph</Text><LineBreak hard="false"/><Text>this one covers more than one line</Text><LineBreak hard="false"/><Text>in fact, it covers three lines</Text></Paragraph><Code hint=""><![CDATA[item number one, subitem one, subsubitem two. the 2nd paragraph
+<Document version="1.0" xmlns="http://schema.markenwerk.net/markdom-1.0.xsd">
+  <Heading level="1">
+    <Text>some markdown</Text>
+  </Heading>
+  <Heading level="2">
+    <Text>some markdown</Text>
+  </Heading>
+  <Heading level="3">
+    <Text>some markdown</Text>
+  </Heading>
+  <Comment>Etiam porta sem malesuada magna mollis euismod.</Comment>
+  <Heading level="4">
+    <Text>some markdown</Text>
+  </Heading>
+  <Heading level="5">
+    <Text>some markdown</Text>
+  </Heading>
+  <Heading level="6">
+    <Text>some markdown</Text>
+  </Heading>
+  <Paragraph>
+    <Text>in markdown s&#xFC;ntax</Text>
+    <LineBreak hard="false"/>
+    <Text>a simple para-graph can</Text>
+    <LineBreak hard="false"/>
+    <Text>span more than one line</Text>
+  </Paragraph>
+  <Paragraph>
+    <Text><![CDATA[this ]]></Text>
+    <Emphasis level="1">
+      <Text>is</Text>
+    </Emphasis>
+    <Text><![CDATA[ a not so simple ]]></Text>
+    <Emphasis level="2">
+      <Text>paragraph</Text>
+    </Emphasis>
+    <Text><![CDATA[ with different kinds of ]]></Text>
+    <Code>emphasises</Code>
+    <Text><![CDATA[ ]]></Text>
+    <Code>&#x200B;`&#x200B;</Code>
+    <Text><![CDATA[, ~~an obolete section~~, and even ]]></Text>
+    <Emphasis level="1">
+      <Text><![CDATA[nested ]]></Text>
+      <Emphasis level="2">
+        <Link uri="http://google.de">
+          <Text>emphasises</Text>
+        </Link>
+      </Emphasis>
+    </Emphasis>
+  </Paragraph>
+  <Paragraph>
+    <Image uri="test.png" title="Title" alternative="alt text"/>
+  </Paragraph>
+  <Heading level="3">
+    <Text>non</Text>
+    <Text>-trivial nested list</Text>
+  </Heading>
+  <UnorderedList>
+    <ListItem>
+      <OrderedList startIndex="1">
+        <ListItem>
+          <Paragraph>
+            <Text>item number one, subitem one</Text>
+            <Text><![CDATA[. ]]></Text>
+            <Emphasis level="2">
+              <Text>an introduction</Text>
+            </Emphasis>
+            <Text/>
+            <LineBreak hard="true"/>
+            <Text>this one covers more than one line</Text>
+            <LineBreak hard="true"/>
+            <Text>in fact, it covers three lines</Text>
+          </Paragraph>
+          <UnorderedList>
+            <ListItem>
+              <Paragraph>
+                <Text>item number one, subitem one, subsubitem one</Text>
+                <Text>. the 1st paragraph</Text>
+                <LineBreak hard="false"/>
+                <Text>this one covers more than one line</Text>
+                <LineBreak hard="false"/>
+                <Text>in fact, it covers three lines</Text>
+              </Paragraph>
+              <Quote>
+                <Paragraph>
+                  <Text>item number one, subitem one, subsubitem one</Text>
+                  <Text>. the 2st paragraph</Text>
+                  <LineBreak hard="false"/>
+                  <Text>this one covers more than one line</Text>
+                  <LineBreak hard="false"/>
+                  <Text>in fact, it covers three lines</Text>
+                </Paragraph>
+              </Quote>
+            </ListItem>
+            <ListItem>
+              <Paragraph>
+                <Text>item number one, subitem one, subsubitem two</Text>
+                <Text>. the 1st paragraph</Text>
+                <LineBreak hard="false"/>
+                <Text>this one covers more than one line</Text>
+                <LineBreak hard="false"/>
+                <Text>in fact, it covers three lines</Text>
+              </Paragraph>
+              <Code hint=""><![CDATA[item number one, subitem one, subsubitem two. the 2nd paragraph
 this one covers more than one line
-in fact, it covers three lines]]></Code></ListItem></UnorderedList><Quote><Paragraph><Text>item number one, subitem one</Text><Text><![CDATA[. ]]></Text><Emphasis level="2"><Text>some final words</Text></Emphasis><LineBreak hard="false"/><Text>this one covers more than one line</Text><LineBreak hard="false"/><Text>in fact, it covers three lines</Text></Paragraph></Quote></ListItem><ListItem><Paragraph><Text>item number one, subitem two</Text><Text><![CDATA[. ]]></Text><Emphasis level="2"><Text>an introduction</Text></Emphasis><LineBreak hard="false"/><Text>this one covers more than one line</Text><LineBreak hard="false"/><Text>in fact, it covers three lines</Text></Paragraph><UnorderedList><ListItem><Paragraph><Text>item number one, subitem two, subsubitem one</Text><Text>. the 1st paragraph</Text><LineBreak hard="false"/><Text>this one covers more than one line</Text><LineBreak hard="false"/><Text>in fact, it covers three lines</Text></Paragraph><Quote><Paragraph><Text>item number one, subitem two, subsubitem one</Text><Text>. the 2nd paragraphthis one covers more than one line</Text></Paragraph></Quote></ListItem><ListItem><Paragraph><Text>item number one, subitem two, subsubitem two</Text><Text>. the 1st paragraph</Text><LineBreak hard="false"/><Text>this one covers more than one line</Text><LineBreak hard="false"/><Text>in fact, it covers three lines</Text></Paragraph><Code hint=""><![CDATA[item number one, subitem two, subsubitem two. the 2nd paragraph
-this one covers more than one line]]></Code></ListItem></UnorderedList><Quote><Paragraph><Text>item number one, subitem two</Text><Text>.</Text><Emphasis level="2"><Text>some final words</Text></Emphasis><LineBreak hard="false"/><Text>this one covers more than one line</Text><LineBreak hard="false"/><Text>in fact, it covers three lines</Text></Paragraph></Quote></ListItem></OrderedList></ListItem><ListItem><Quote><Paragraph><Text>item number two</Text><Text><![CDATA[. ]]></Text><Emphasis level="2"><Text>an introduction</Text></Emphasis><LineBreak hard="false"/><Text>this one covers more than one line</Text></Paragraph><UnorderedList><ListItem><Paragraph><Text>item number two, subitem one</Text><Text>. the 1st paragraph</Text><LineBreak hard="false"/><Text>this one covers more than one line</Text></Paragraph><Quote><Paragraph><Text>item number two, subitem one</Text><Text>. the 2nd paragraph</Text><LineBreak hard="false"/><Text>this one covers more than one line</Text></Paragraph></Quote></ListItem><ListItem><Paragraph><Text>item number two, subitem two</Text><Text>. the 1st paragraph</Text><LineBreak hard="false"/><Text>this one covers more than one line</Text></Paragraph><Code hint=""><![CDATA[item number two, subitem two. the 2nd paragraph
-this one covers more than one line]]></Code></ListItem></UnorderedList><Quote><Paragraph><Text>item number two</Text><Text><![CDATA[. ]]></Text><Emphasis level="2"><Text>some final words</Text></Emphasis><LineBreak hard="false"/><Text>this one covers more than two line</Text></Paragraph></Quote></Quote></ListItem></UnorderedList><Heading level="3"><Text>HTML Block</Text></Heading><Paragraph><Text>&lt;p&gt;Test&lt;/p&gt;</Text></Paragraph><Heading level="3"><Text>blocks in a quote block</Text></Heading><Quote><Heading level="4"><Text>heading block in quote block</Text></Heading><Paragraph><Text><![CDATA[paragraph block in quote block using some ]]></Text><Text>&lt;span style="color:red;"&gt;</Text><Text>CSS</Text><Text>&lt;/span&gt;</Text><Text><![CDATA[ in inline HTML]]></Text></Paragraph><Code hint="hint">code block in quote block</Code><Division/><OrderedList startIndex="1"><ListItem><Paragraph><Text>list block in quote block</Text></Paragraph></ListItem></OrderedList><Quote><Paragraph><Text>quote block in quote block</Text></Paragraph></Quote></Quote><Heading level="3"><Text>blocks in list items</Text></Heading><UnorderedList><ListItem><Heading level="4"><Text>heading block in list item</Text></Heading></ListItem><ListItem><Paragraph><Text>paragraph block in list item</Text></Paragraph><Paragraph><Text>second paragraph block in a single list item</Text></Paragraph></ListItem><ListItem><Code hint="hint">code block in list item</Code></ListItem><ListItem><Division/></ListItem><ListItem><OrderedList startIndex="1"><ListItem><Paragraph><Text>list block in list item</Text></Paragraph></ListItem></OrderedList></ListItem><ListItem><Quote><Paragraph><Text>quote block in list item</Text></Paragraph></Quote></ListItem></UnorderedList><Heading level="3"><Text>an empty quote</Text></Heading><Quote/><Heading level="3"><Text>an empty list</Text></Heading><Heading level="3"><Text>some empty list items</Text></Heading><OrderedList startIndex="25240"><ListItem><Quote/></ListItem><ListItem><Heading level="4"/></ListItem><ListItem/><ListItem/></OrderedList><Paragraph><Text>this is the end my friend</Text></Paragraph></Document>
+in fact, it covers three lines]]></Code>
+            </ListItem>
+          </UnorderedList>
+          <Quote>
+            <Paragraph>
+              <Text>item number one, subitem one</Text>
+              <Text><![CDATA[. ]]></Text>
+              <Emphasis level="2">
+                <Text>some final words</Text>
+              </Emphasis>
+              <LineBreak hard="false"/>
+              <Text>this one covers more than one line</Text>
+              <LineBreak hard="false"/>
+              <Text>in fact, it covers three lines</Text>
+            </Paragraph>
+          </Quote>
+        </ListItem>
+        <ListItem>
+          <Paragraph>
+            <Text>item number one, subitem two</Text>
+            <Text><![CDATA[. ]]></Text>
+            <Emphasis level="2">
+              <Text>an introduction</Text>
+            </Emphasis>
+            <LineBreak hard="false"/>
+            <Text>this one covers more than one line</Text>
+            <LineBreak hard="false"/>
+            <Text>in fact, it covers three lines</Text>
+          </Paragraph>
+          <UnorderedList>
+            <ListItem>
+              <Paragraph>
+                <Text>item number one, subitem two, subsubitem one</Text>
+                <Text>. the 1st paragraph</Text>
+                <LineBreak hard="false"/>
+                <Text>this one covers more than one line</Text>
+                <LineBreak hard="false"/>
+                <Text>in fact, it covers three lines</Text>
+              </Paragraph>
+              <Quote>
+                <Paragraph>
+                  <Text>item number one, subitem two, subsubitem one</Text>
+                  <Text>. the 2nd paragraphthis one covers more than one line</Text>
+                </Paragraph>
+              </Quote>
+            </ListItem>
+            <ListItem>
+              <Paragraph>
+                <Text>item number one, subitem two, subsubitem two</Text>
+                <Text>. the 1st paragraph</Text>
+                <LineBreak hard="false"/>
+                <Text>this one covers more than one line</Text>
+                <LineBreak hard="false"/>
+                <Text>in fact, it covers three lines</Text>
+              </Paragraph>
+              <Code hint=""><![CDATA[item number one, subitem two, subsubitem two. the 2nd paragraph
+this one covers more than one line]]></Code>
+            </ListItem>
+          </UnorderedList>
+          <Quote>
+            <Paragraph>
+              <Text>item number one, subitem two</Text>
+              <Text>.</Text>
+              <Emphasis level="2">
+                <Text>some final words</Text>
+              </Emphasis>
+              <LineBreak hard="false"/>
+              <Text>this one covers more than one line</Text>
+              <LineBreak hard="false"/>
+              <Text>in fact, it covers three lines</Text>
+            </Paragraph>
+          </Quote>
+        </ListItem>
+      </OrderedList>
+    </ListItem>
+    <ListItem>
+      <Quote>
+        <Paragraph>
+          <Text>item number two</Text>
+          <Text><![CDATA[. ]]></Text>
+          <Emphasis level="2">
+            <Text>an introduction</Text>
+          </Emphasis>
+          <LineBreak hard="false"/>
+          <Text>this one covers more than one line</Text>
+        </Paragraph>
+        <UnorderedList>
+          <ListItem>
+            <Paragraph>
+              <Text>item number two, subitem one</Text>
+              <Text>. the 1st paragraph</Text>
+              <LineBreak hard="false"/>
+              <Text>this one covers more than one line</Text>
+            </Paragraph>
+            <Quote>
+              <Paragraph>
+                <Text>item number two, subitem one</Text>
+                <Text>. the 2nd paragraph</Text>
+                <LineBreak hard="false"/>
+                <Text>this one covers more than one line</Text>
+              </Paragraph>
+            </Quote>
+          </ListItem>
+          <ListItem>
+            <Paragraph>
+              <Text>item number two, subitem two</Text>
+              <Text>. the 1st paragraph</Text>
+              <LineBreak hard="false"/>
+              <Text>this one covers more than one line</Text>
+            </Paragraph>
+            <Code hint=""><![CDATA[item number two, subitem two. the 2nd paragraph
+this one covers more than one line]]></Code>
+          </ListItem>
+        </UnorderedList>
+        <Quote>
+          <Paragraph>
+            <Text>item number two</Text>
+            <Text><![CDATA[. ]]></Text>
+            <Emphasis level="2">
+              <Text>some final words</Text>
+            </Emphasis>
+            <LineBreak hard="false"/>
+            <Text>this one covers more than two line</Text>
+          </Paragraph>
+        </Quote>
+      </Quote>
+    </ListItem>
+  </UnorderedList>
+  <Heading level="3">
+    <Text>HTML Block</Text>
+  </Heading>
+  <Paragraph>
+    <Text>&lt;p&gt;Test&lt;/p&gt;</Text>
+  </Paragraph>
+  <Heading level="3">
+    <Text>blocks in a quote block</Text>
+  </Heading>
+  <Quote>
+    <Heading level="4">
+      <Text>heading block in quote block</Text>
+    </Heading>
+    <Paragraph>
+      <Text><![CDATA[paragraph block in quote block using some ]]></Text>
+      <Text>&lt;span style="color:red;"&gt;</Text>
+      <Text>CSS</Text>
+      <Text>&lt;/span&gt;</Text>
+      <Text><![CDATA[ in inline HTML]]></Text>
+    </Paragraph>
+    <Code hint="hint">code block in quote block</Code>
+    <Division/>
+    <OrderedList startIndex="1">
+      <ListItem>
+        <Paragraph>
+          <Text>list block in quote block</Text>
+        </Paragraph>
+      </ListItem>
+    </OrderedList>
+    <Quote>
+      <Paragraph>
+        <Text>quote block in quote block</Text>
+      </Paragraph>
+    </Quote>
+  </Quote>
+  <Heading level="3">
+    <Text>blocks in list items</Text>
+  </Heading>
+  <UnorderedList>
+    <ListItem>
+      <Heading level="4">
+        <Text>heading block in list item</Text>
+      </Heading>
+    </ListItem>
+    <ListItem>
+      <Paragraph>
+        <Text>paragraph block in list item</Text>
+      </Paragraph>
+      <Paragraph>
+        <Text>second paragraph block in a single list item</Text>
+      </Paragraph>
+    </ListItem>
+    <ListItem>
+      <Code hint="hint">code block in list item</Code>
+    </ListItem>
+    <ListItem>
+      <Division/>
+    </ListItem>
+    <ListItem>
+      <OrderedList startIndex="1">
+        <ListItem>
+          <Paragraph>
+            <Text>list block in list item</Text>
+          </Paragraph>
+        </ListItem>
+      </OrderedList>
+    </ListItem>
+    <ListItem>
+      <Quote>
+        <Paragraph>
+          <Text>quote block in list item</Text>
+        </Paragraph>
+      </Quote>
+    </ListItem>
+  </UnorderedList>
+  <Heading level="3">
+    <Text>an empty quote</Text>
+  </Heading>
+  <Quote/>
+  <Heading level="3">
+    <Text>an empty list</Text>
+  </Heading>
+  <Heading level="3">
+    <Text>some empty list items</Text>
+  </Heading>
+  <OrderedList startIndex="25240">
+    <ListItem>
+      <Quote/>
+    </ListItem>
+    <ListItem>
+      <Heading level="4"/>
+    </ListItem>
+    <ListItem/>
+    <ListItem/>
+  </OrderedList>
+  <Paragraph>
+    <Text>this is the end my friend</Text>
+  </Paragraph>
+</Document>
