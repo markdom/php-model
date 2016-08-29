@@ -25,7 +25,7 @@
     "markdom/model-interface": "^1.0.3"
   },
   "require-dev": {
-    "markdom/handler": "^1.0.8",
+    "markdom/handler": "^1.0.10",
     "phpunit/phpunit": ">=4.8.26",
     "codeclimate/php-test-reporter": "dev-master"
   }

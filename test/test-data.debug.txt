@@ -1,0 +1,1080 @@
+onDocumentBegin
+    onBlocksBegin
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 1
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: some markdown
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 1
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 2
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: some markdown
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 2
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 3
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: some markdown
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 3
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: COMMENT
+            onCommentBlock: Etiam porta sem malesuada magna mollis euismod.
+        onBlockEnd: COMMENT
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 4
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: some markdown
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 4
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 5
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: some markdown
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 5
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 6
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: some markdown
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 6
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: PARAGRAPH
+            onParagraphBlockBegin
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: in markdown süntax
+                onContentEnd: TEXT
+                onNextContent
+                onContentBegin: LINE_BREAK
+                    onLineBreakContent: 
+                onContentEnd: LINE_BREAK
+                onNextContent
+                onContentBegin: TEXT
+                    onTextContent: a simple para-graph can
+                onContentEnd: TEXT
+                onNextContent
+                onContentBegin: LINE_BREAK
+                    onLineBreakContent: 
+                onContentEnd: LINE_BREAK
+                onNextContent
+                onContentBegin: TEXT
+                    onTextContent: span more than one line
+                onContentEnd: TEXT
+            onContentsEnd
+            onParagraphBlockEnd
+        onBlockEnd: PARAGRAPH
+        onNextBlock
+        onBlockBegin: PARAGRAPH
+            onParagraphBlockBegin
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: this 
+                onContentEnd: TEXT
+                onNextContent
+                onContentBegin: EMPHASIS
+                    onEmphasisContentBegin: 1
+                    onContentsBegin
+                        onContentBegin: TEXT
+                            onTextContent: is
+                        onContentEnd: TEXT
+                    onContentsEnd
+                    onEmphasisContentEnd: 1
+                onContentEnd: EMPHASIS
+                onNextContent
+                onContentBegin: TEXT
+                    onTextContent:  a not so simple 
+                onContentEnd: TEXT
+                onNextContent
+                onContentBegin: EMPHASIS
+                    onEmphasisContentBegin: 2
+                    onContentsBegin
+                        onContentBegin: TEXT
+                            onTextContent: paragraph
+                        onContentEnd: TEXT
+                    onContentsEnd
+                    onEmphasisContentEnd: 2
+                onContentEnd: EMPHASIS
+                onNextContent
+                onContentBegin: TEXT
+                    onTextContent:  with different kinds of 
+                onContentEnd: TEXT
+                onNextContent
+                onContentBegin: CODE
+                    onCodeContent: emphasises
+                onContentEnd: CODE
+                onNextContent
+                onContentBegin: TEXT
+                    onTextContent:  
+                onContentEnd: TEXT
+                onNextContent
+                onContentBegin: CODE
+                    onCodeContent: ​`​
+                onContentEnd: CODE
+                onNextContent
+                onContentBegin: TEXT
+                    onTextContent: , ~~an obolete section~~, and even 
+                onContentEnd: TEXT
+                onNextContent
+                onContentBegin: EMPHASIS
+                    onEmphasisContentBegin: 1
+                    onContentsBegin
+                        onContentBegin: TEXT
+                            onTextContent: nested 
+                        onContentEnd: TEXT
+                        onNextContent
+                        onContentBegin: EMPHASIS
+                            onEmphasisContentBegin: 2
+                            onContentsBegin
+                                onContentBegin: LINK
+                                    onLinkContentBegin: http://google.de ~ Link to Google
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: emphasises
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onLinkContentEnd: http://google.de ~ Link to Google
+                                onContentEnd: LINK
+                            onContentsEnd
+                            onEmphasisContentEnd: 2
+                        onContentEnd: EMPHASIS
+                    onContentsEnd
+                    onEmphasisContentEnd: 1
+                onContentEnd: EMPHASIS
+            onContentsEnd
+            onParagraphBlockEnd
+        onBlockEnd: PARAGRAPH
+        onNextBlock
+        onBlockBegin: PARAGRAPH
+            onParagraphBlockBegin
+            onContentsBegin
+                onContentBegin: IMAGE
+                    onImageContent: test.png ~ Title ~ alt text
+                onContentEnd: IMAGE
+            onContentsEnd
+            onParagraphBlockEnd
+        onBlockEnd: PARAGRAPH
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 3
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: non
+                onContentEnd: TEXT
+                onNextContent
+                onContentBegin: TEXT
+                    onTextContent: -trivial nested list
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 3
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: UNORDERED_LIST
+            onUnorderedListBlockBegin
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: ORDERED_LIST
+                    onOrderedListBlockBegin: 1
+                    onListItemBegin
+                    onBlocksBegin
+                        onBlockBegin: PARAGRAPH
+                            onParagraphBlockBegin
+                            onContentsBegin
+                                onContentBegin: TEXT
+                                    onTextContent: item number one, subitem one
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: . 
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: EMPHASIS
+                                    onEmphasisContentBegin: 2
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: an introduction
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onEmphasisContentEnd: 2
+                                onContentEnd: EMPHASIS
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: 
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: LINE_BREAK
+                                    onLineBreakContent: 1
+                                onContentEnd: LINE_BREAK
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: this one covers more than one line
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: LINE_BREAK
+                                    onLineBreakContent: 1
+                                onContentEnd: LINE_BREAK
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: in fact, it covers three lines
+                                onContentEnd: TEXT
+                            onContentsEnd
+                            onParagraphBlockEnd
+                        onBlockEnd: PARAGRAPH
+                        onNextBlock
+                        onBlockBegin: UNORDERED_LIST
+                            onUnorderedListBlockBegin
+                            onListItemBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number one, subitem one, subsubitem one
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: . the 1st paragraph
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than one line
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: in fact, it covers three lines
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                                onNextBlock
+                                onBlockBegin: QUOTE
+                                    onQuoteBlockBegin
+                                    onBlocksBegin
+                                        onBlockBegin: PARAGRAPH
+                                            onParagraphBlockBegin
+                                            onContentsBegin
+                                                onContentBegin: TEXT
+                                                    onTextContent: item number one, subitem one, subsubitem one
+                                                onContentEnd: TEXT
+                                                onNextContent
+                                                onContentBegin: TEXT
+                                                    onTextContent: . the 2st paragraph
+                                                onContentEnd: TEXT
+                                                onNextContent
+                                                onContentBegin: LINE_BREAK
+                                                    onLineBreakContent: 
+                                                onContentEnd: LINE_BREAK
+                                                onNextContent
+                                                onContentBegin: TEXT
+                                                    onTextContent: this one covers more than one line
+                                                onContentEnd: TEXT
+                                                onNextContent
+                                                onContentBegin: LINE_BREAK
+                                                    onLineBreakContent: 
+                                                onContentEnd: LINE_BREAK
+                                                onNextContent
+                                                onContentBegin: TEXT
+                                                    onTextContent: in fact, it covers three lines
+                                                onContentEnd: TEXT
+                                            onContentsEnd
+                                            onParagraphBlockEnd
+                                        onBlockEnd: PARAGRAPH
+                                    onBlocksEnd
+                                    onQuoteBlockEnd
+                                onBlockEnd: QUOTE
+                            onBlocksEnd
+                            onListItemEnd
+                            onNextListItem
+                            onListItemBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number one, subitem one, subsubitem two
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: . the 1st paragraph
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than one line
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: in fact, it covers three lines
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                                onNextBlock
+                                onBlockBegin: CODE
+                                    onCodeBlock:  ~ item number one, subitem one, subsubitem two. the 2nd paragraph
+this one covers more than one line
+in fact, it covers three lines
+                                onBlockEnd: CODE
+                            onBlocksEnd
+                            onListItemEnd
+                            onUnorderedListBlockEnd
+                        onBlockEnd: UNORDERED_LIST
+                        onNextBlock
+                        onBlockBegin: QUOTE
+                            onQuoteBlockBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number one, subitem one
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: . 
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: EMPHASIS
+                                            onEmphasisContentBegin: 2
+                                            onContentsBegin
+                                                onContentBegin: TEXT
+                                                    onTextContent: some final words
+                                                onContentEnd: TEXT
+                                            onContentsEnd
+                                            onEmphasisContentEnd: 2
+                                        onContentEnd: EMPHASIS
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than one line
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: in fact, it covers three lines
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                            onBlocksEnd
+                            onQuoteBlockEnd
+                        onBlockEnd: QUOTE
+                    onBlocksEnd
+                    onListItemEnd
+                    onNextListItem
+                    onListItemBegin
+                    onBlocksBegin
+                        onBlockBegin: PARAGRAPH
+                            onParagraphBlockBegin
+                            onContentsBegin
+                                onContentBegin: TEXT
+                                    onTextContent: item number one, subitem two
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: . 
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: EMPHASIS
+                                    onEmphasisContentBegin: 2
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: an introduction
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onEmphasisContentEnd: 2
+                                onContentEnd: EMPHASIS
+                                onNextContent
+                                onContentBegin: LINE_BREAK
+                                    onLineBreakContent: 
+                                onContentEnd: LINE_BREAK
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: this one covers more than one line
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: LINE_BREAK
+                                    onLineBreakContent: 
+                                onContentEnd: LINE_BREAK
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: in fact, it covers three lines
+                                onContentEnd: TEXT
+                            onContentsEnd
+                            onParagraphBlockEnd
+                        onBlockEnd: PARAGRAPH
+                        onNextBlock
+                        onBlockBegin: UNORDERED_LIST
+                            onUnorderedListBlockBegin
+                            onListItemBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number one, subitem two, subsubitem one
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: . the 1st paragraph
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than one line
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: in fact, it covers three lines
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                                onNextBlock
+                                onBlockBegin: QUOTE
+                                    onQuoteBlockBegin
+                                    onBlocksBegin
+                                        onBlockBegin: PARAGRAPH
+                                            onParagraphBlockBegin
+                                            onContentsBegin
+                                                onContentBegin: TEXT
+                                                    onTextContent: item number one, subitem two, subsubitem one
+                                                onContentEnd: TEXT
+                                                onNextContent
+                                                onContentBegin: TEXT
+                                                    onTextContent: . the 2nd paragraphthis one covers more than one line
+                                                onContentEnd: TEXT
+                                            onContentsEnd
+                                            onParagraphBlockEnd
+                                        onBlockEnd: PARAGRAPH
+                                    onBlocksEnd
+                                    onQuoteBlockEnd
+                                onBlockEnd: QUOTE
+                            onBlocksEnd
+                            onListItemEnd
+                            onNextListItem
+                            onListItemBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number one, subitem two, subsubitem two
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: . the 1st paragraph
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than one line
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: in fact, it covers three lines
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                                onNextBlock
+                                onBlockBegin: CODE
+                                    onCodeBlock:  ~ item number one, subitem two, subsubitem two. the 2nd paragraph
+this one covers more than one line
+                                onBlockEnd: CODE
+                            onBlocksEnd
+                            onListItemEnd
+                            onUnorderedListBlockEnd
+                        onBlockEnd: UNORDERED_LIST
+                        onNextBlock
+                        onBlockBegin: QUOTE
+                            onQuoteBlockBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number one, subitem two
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: .
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: EMPHASIS
+                                            onEmphasisContentBegin: 2
+                                            onContentsBegin
+                                                onContentBegin: TEXT
+                                                    onTextContent: some final words
+                                                onContentEnd: TEXT
+                                            onContentsEnd
+                                            onEmphasisContentEnd: 2
+                                        onContentEnd: EMPHASIS
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than one line
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: in fact, it covers three lines
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                            onBlocksEnd
+                            onQuoteBlockEnd
+                        onBlockEnd: QUOTE
+                    onBlocksEnd
+                    onListItemEnd
+                    onOrderedListBlockEnd: 1
+                onBlockEnd: ORDERED_LIST
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: QUOTE
+                    onQuoteBlockBegin
+                    onBlocksBegin
+                        onBlockBegin: PARAGRAPH
+                            onParagraphBlockBegin
+                            onContentsBegin
+                                onContentBegin: TEXT
+                                    onTextContent: item number two
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: . 
+                                onContentEnd: TEXT
+                                onNextContent
+                                onContentBegin: EMPHASIS
+                                    onEmphasisContentBegin: 2
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: an introduction
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onEmphasisContentEnd: 2
+                                onContentEnd: EMPHASIS
+                                onNextContent
+                                onContentBegin: LINE_BREAK
+                                    onLineBreakContent: 
+                                onContentEnd: LINE_BREAK
+                                onNextContent
+                                onContentBegin: TEXT
+                                    onTextContent: this one covers more than one line
+                                onContentEnd: TEXT
+                            onContentsEnd
+                            onParagraphBlockEnd
+                        onBlockEnd: PARAGRAPH
+                        onNextBlock
+                        onBlockBegin: UNORDERED_LIST
+                            onUnorderedListBlockBegin
+                            onListItemBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number two, subitem one
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: . the 1st paragraph
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than one line
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                                onNextBlock
+                                onBlockBegin: QUOTE
+                                    onQuoteBlockBegin
+                                    onBlocksBegin
+                                        onBlockBegin: PARAGRAPH
+                                            onParagraphBlockBegin
+                                            onContentsBegin
+                                                onContentBegin: TEXT
+                                                    onTextContent: item number two, subitem one
+                                                onContentEnd: TEXT
+                                                onNextContent
+                                                onContentBegin: TEXT
+                                                    onTextContent: . the 2nd paragraph
+                                                onContentEnd: TEXT
+                                                onNextContent
+                                                onContentBegin: LINE_BREAK
+                                                    onLineBreakContent: 
+                                                onContentEnd: LINE_BREAK
+                                                onNextContent
+                                                onContentBegin: TEXT
+                                                    onTextContent: this one covers more than one line
+                                                onContentEnd: TEXT
+                                            onContentsEnd
+                                            onParagraphBlockEnd
+                                        onBlockEnd: PARAGRAPH
+                                    onBlocksEnd
+                                    onQuoteBlockEnd
+                                onBlockEnd: QUOTE
+                            onBlocksEnd
+                            onListItemEnd
+                            onNextListItem
+                            onListItemBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number two, subitem two
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: . the 1st paragraph
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than one line
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                                onNextBlock
+                                onBlockBegin: CODE
+                                    onCodeBlock:  ~ item number two, subitem two. the 2nd paragraph
+this one covers more than one line
+                                onBlockEnd: CODE
+                            onBlocksEnd
+                            onListItemEnd
+                            onUnorderedListBlockEnd
+                        onBlockEnd: UNORDERED_LIST
+                        onNextBlock
+                        onBlockBegin: QUOTE
+                            onQuoteBlockBegin
+                            onBlocksBegin
+                                onBlockBegin: PARAGRAPH
+                                    onParagraphBlockBegin
+                                    onContentsBegin
+                                        onContentBegin: TEXT
+                                            onTextContent: item number two
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: . 
+                                        onContentEnd: TEXT
+                                        onNextContent
+                                        onContentBegin: EMPHASIS
+                                            onEmphasisContentBegin: 2
+                                            onContentsBegin
+                                                onContentBegin: TEXT
+                                                    onTextContent: some final words
+                                                onContentEnd: TEXT
+                                            onContentsEnd
+                                            onEmphasisContentEnd: 2
+                                        onContentEnd: EMPHASIS
+                                        onNextContent
+                                        onContentBegin: LINE_BREAK
+                                            onLineBreakContent: 
+                                        onContentEnd: LINE_BREAK
+                                        onNextContent
+                                        onContentBegin: TEXT
+                                            onTextContent: this one covers more than two line
+                                        onContentEnd: TEXT
+                                    onContentsEnd
+                                    onParagraphBlockEnd
+                                onBlockEnd: PARAGRAPH
+                            onBlocksEnd
+                            onQuoteBlockEnd
+                        onBlockEnd: QUOTE
+                    onBlocksEnd
+                    onQuoteBlockEnd
+                onBlockEnd: QUOTE
+            onBlocksEnd
+            onListItemEnd
+            onUnorderedListBlockEnd
+        onBlockEnd: UNORDERED_LIST
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 3
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: HTML Block
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 3
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: PARAGRAPH
+            onParagraphBlockBegin
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: <p>Test</p>
+                onContentEnd: TEXT
+            onContentsEnd
+            onParagraphBlockEnd
+        onBlockEnd: PARAGRAPH
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 3
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: blocks in a quote block
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 3
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: QUOTE
+            onQuoteBlockBegin
+            onBlocksBegin
+                onBlockBegin: HEADING
+                    onHeadingBlockBegin: 4
+                    onContentsBegin
+                        onContentBegin: TEXT
+                            onTextContent: heading block in quote block
+                        onContentEnd: TEXT
+                    onContentsEnd
+                    onHeadingBlockEnd: 4
+                onBlockEnd: HEADING
+                onNextBlock
+                onBlockBegin: PARAGRAPH
+                    onParagraphBlockBegin
+                    onContentsBegin
+                        onContentBegin: TEXT
+                            onTextContent: paragraph block in quote block using some 
+                        onContentEnd: TEXT
+                        onNextContent
+                        onContentBegin: TEXT
+                            onTextContent: <span style="color:red;">
+                        onContentEnd: TEXT
+                        onNextContent
+                        onContentBegin: TEXT
+                            onTextContent: CSS
+                        onContentEnd: TEXT
+                        onNextContent
+                        onContentBegin: TEXT
+                            onTextContent: </span>
+                        onContentEnd: TEXT
+                        onNextContent
+                        onContentBegin: TEXT
+                            onTextContent:  in inline HTML
+                        onContentEnd: TEXT
+                    onContentsEnd
+                    onParagraphBlockEnd
+                onBlockEnd: PARAGRAPH
+                onNextBlock
+                onBlockBegin: CODE
+                    onCodeBlock: hint ~ code block in quote block
+                onBlockEnd: CODE
+                onNextBlock
+                onBlockBegin: DIVISION
+                    onDivisionBlock
+                onBlockEnd: DIVISION
+                onNextBlock
+                onBlockBegin: ORDERED_LIST
+                    onOrderedListBlockBegin: 1
+                    onListItemBegin
+                    onBlocksBegin
+                        onBlockBegin: PARAGRAPH
+                            onParagraphBlockBegin
+                            onContentsBegin
+                                onContentBegin: TEXT
+                                    onTextContent: list block in quote block
+                                onContentEnd: TEXT
+                            onContentsEnd
+                            onParagraphBlockEnd
+                        onBlockEnd: PARAGRAPH
+                    onBlocksEnd
+                    onListItemEnd
+                    onOrderedListBlockEnd: 1
+                onBlockEnd: ORDERED_LIST
+                onNextBlock
+                onBlockBegin: QUOTE
+                    onQuoteBlockBegin
+                    onBlocksBegin
+                        onBlockBegin: PARAGRAPH
+                            onParagraphBlockBegin
+                            onContentsBegin
+                                onContentBegin: TEXT
+                                    onTextContent: quote block in quote block
+                                onContentEnd: TEXT
+                            onContentsEnd
+                            onParagraphBlockEnd
+                        onBlockEnd: PARAGRAPH
+                    onBlocksEnd
+                    onQuoteBlockEnd
+                onBlockEnd: QUOTE
+            onBlocksEnd
+            onQuoteBlockEnd
+        onBlockEnd: QUOTE
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 3
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: blocks in list items
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 3
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: UNORDERED_LIST
+            onUnorderedListBlockBegin
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: HEADING
+                    onHeadingBlockBegin: 4
+                    onContentsBegin
+                        onContentBegin: TEXT
+                            onTextContent: heading block in list item
+                        onContentEnd: TEXT
+                    onContentsEnd
+                    onHeadingBlockEnd: 4
+                onBlockEnd: HEADING
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: PARAGRAPH
+                    onParagraphBlockBegin
+                    onContentsBegin
+                        onContentBegin: TEXT
+                            onTextContent: paragraph block in list item
+                        onContentEnd: TEXT
+                    onContentsEnd
+                    onParagraphBlockEnd
+                onBlockEnd: PARAGRAPH
+                onNextBlock
+                onBlockBegin: PARAGRAPH
+                    onParagraphBlockBegin
+                    onContentsBegin
+                        onContentBegin: TEXT
+                            onTextContent: second paragraph block in a single list item
+                        onContentEnd: TEXT
+                    onContentsEnd
+                    onParagraphBlockEnd
+                onBlockEnd: PARAGRAPH
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: CODE
+                    onCodeBlock: hint ~ code block in list item
+                onBlockEnd: CODE
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: DIVISION
+                    onDivisionBlock
+                onBlockEnd: DIVISION
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: ORDERED_LIST
+                    onOrderedListBlockBegin: 1
+                    onListItemBegin
+                    onBlocksBegin
+                        onBlockBegin: PARAGRAPH
+                            onParagraphBlockBegin
+                            onContentsBegin
+                                onContentBegin: TEXT
+                                    onTextContent: list block in list item
+                                onContentEnd: TEXT
+                            onContentsEnd
+                            onParagraphBlockEnd
+                        onBlockEnd: PARAGRAPH
+                    onBlocksEnd
+                    onListItemEnd
+                    onOrderedListBlockEnd: 1
+                onBlockEnd: ORDERED_LIST
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: QUOTE
+                    onQuoteBlockBegin
+                    onBlocksBegin
+                        onBlockBegin: PARAGRAPH
+                            onParagraphBlockBegin
+                            onContentsBegin
+                                onContentBegin: TEXT
+                                    onTextContent: quote block in list item
+                                onContentEnd: TEXT
+                            onContentsEnd
+                            onParagraphBlockEnd
+                        onBlockEnd: PARAGRAPH
+                    onBlocksEnd
+                    onQuoteBlockEnd
+                onBlockEnd: QUOTE
+            onBlocksEnd
+            onListItemEnd
+            onUnorderedListBlockEnd
+        onBlockEnd: UNORDERED_LIST
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 3
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: an empty quote
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 3
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: QUOTE
+            onQuoteBlockBegin
+            onBlocksBegin
+            onBlocksEnd
+            onQuoteBlockEnd
+        onBlockEnd: QUOTE
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 3
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: an empty list
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 3
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: HEADING
+            onHeadingBlockBegin: 3
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: some empty list items
+                onContentEnd: TEXT
+            onContentsEnd
+            onHeadingBlockEnd: 3
+        onBlockEnd: HEADING
+        onNextBlock
+        onBlockBegin: ORDERED_LIST
+            onOrderedListBlockBegin: 25240
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: QUOTE
+                    onQuoteBlockBegin
+                    onBlocksBegin
+                    onBlocksEnd
+                    onQuoteBlockEnd
+                onBlockEnd: QUOTE
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+                onBlockBegin: HEADING
+                    onHeadingBlockBegin: 4
+                    onContentsBegin
+                    onContentsEnd
+                    onHeadingBlockEnd: 4
+                onBlockEnd: HEADING
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+            onBlocksEnd
+            onListItemEnd
+            onNextListItem
+            onListItemBegin
+            onBlocksBegin
+            onBlocksEnd
+            onListItemEnd
+            onOrderedListBlockEnd: 25240
+        onBlockEnd: ORDERED_LIST
+        onNextBlock
+        onBlockBegin: PARAGRAPH
+            onParagraphBlockBegin
+            onContentsBegin
+                onContentBegin: TEXT
+                    onTextContent: this is the end my friend
+                onContentEnd: TEXT
+            onContentsEnd
+            onParagraphBlockEnd
+        onBlockEnd: PARAGRAPH
+    onBlocksEnd
+onDocumentEnd
