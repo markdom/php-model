@@ -17,6 +17,7 @@ class CommonmarkTest extends \PHPUnit_Framework_TestCase
 	public function testParseHandle()
 	{
 		// Dispatch a JSON file as Markdom Document
+		// TODO: Replace with a CommonmarkDispatcher after implementing the HTML block and inline HTML handling
 		$handler = new ModelHandler();
 		$dispatcher = new JsonDispatcher($handler);
 		$dispatcher->process(file_get_contents(__DIR__ . '/test-data.json'));
