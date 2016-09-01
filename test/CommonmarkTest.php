@@ -2,7 +2,7 @@
 
 namespace Markdom\Test;
 
-use Markdom\Dispatcher\JsonDispatcher;
+use Markdom\Dispatcher\CommonmarkDispatcher;
 use Markdom\Handler\CommonmarkHandler;
 use Markdom\Model\Handler\ModelHandler;
 
@@ -16,18 +16,17 @@ class CommonmarkTest extends \PHPUnit_Framework_TestCase
 
 	public function testParseHandle()
 	{
-		// Dispatch a JSON file as Markdom Document
-		// TODO: Replace with a CommonmarkDispatcher after implementing the HTML block and inline HTML handling
+		// Dispatch a Commonmark file as Markdom Document
 		$handler = new ModelHandler();
-		$dispatcher = new JsonDispatcher($handler);
-		$dispatcher->process(file_get_contents(__DIR__ . '/test-data.json'));
+		$dispatcher = new CommonmarkDispatcher($handler);
+		$dispatcher->processFile(__DIR__ . '/test-data.md');
 		$document = $handler->getResult();
 
 		// Dispatch the Markdom Document as Commonmark string
 		$handler = new CommonmarkHandler();
 		$document->handle($handler);
 		$commonmarkString = $handler->getResult();
-		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.md'), $commonmarkString);
+		$this->assertEquals(file_get_contents(__DIR__ . '/test-result.md'), $commonmarkString);
 	}
 
 }
