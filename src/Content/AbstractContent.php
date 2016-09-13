@@ -76,7 +76,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	/**
 	 * @return CountableIteratorInterface
 	 */
-	final public function getChildren()
+	public function getChildren()
 	{
 		return new EmptyCountableIterator();
 	}
