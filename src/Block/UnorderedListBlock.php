@@ -19,7 +19,7 @@ final class UnorderedListBlock extends AbstractBlock implements UnorderedListBlo
 	/**
 	 * @return string
 	 */
-	final public function getBlockType()
+	public function getBlockType()
 	{
 		return BlockInterface::TYPE_UNORDERED_LIST;
 	}

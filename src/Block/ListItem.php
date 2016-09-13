@@ -28,7 +28,7 @@ final class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return string
 	 */
-	final public function getNodeType()
+	public function getNodeType()
 	{
 		return NodeInterface::NODE_TYPE_LIST_ITEM;
 	}
@@ -36,7 +36,7 @@ final class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return int
 	 */
-	final public function getIndex()
+	public function getIndex()
 	{
 		return $this->getParent()->getListItems()->indexOf($this);
 	}
@@ -44,15 +44,23 @@ final class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return ListBlockInterface
 	 */
-	final public function getParent()
+	public function getParent()
 	{
 		return $this->listBlock;
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function hasParent()
+	{
+		return !is_null($this->getParent());
+	}
+
+	/**
 	 * @return DocumentInterface
 	 */
-	final public function getDocument()
+	public function getDocument()
 	{
 		return $this->getParent()->getDocument();
 	}
@@ -62,7 +70,7 @@ final class ListItem extends AbstractNode implements ListItemInterface
 	 * @return $this
 	 * @throws MarkdomModelException
 	 */
-	final public function onAttach(ListBlockInterface $listBlock)
+	public function onAttach(ListBlockInterface $listBlock)
 	{
 		if (!is_null($this->listBlock)) {
 			throw new MarkdomModelException('List item is already attached');
@@ -75,7 +83,7 @@ final class ListItem extends AbstractNode implements ListItemInterface
 	 * @return $this
 	 * @throws MarkdomModelException
 	 */
-	final public function onDetach()
+	public function onDetach()
 	{
 		if (is_null($this->listBlock)) {
 			throw new MarkdomModelException('list item is already detached');

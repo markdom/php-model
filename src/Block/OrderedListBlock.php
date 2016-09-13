@@ -34,7 +34,7 @@ final class OrderedListBlock extends AbstractBlock implements OrderedListBlockIn
 	/**
 	 * @return string
 	 */
-	final public function getBlockType()
+	public function getBlockType()
 	{
 		return BlockInterface::TYPE_ORDERED_LIST;
 	}

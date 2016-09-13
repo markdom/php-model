@@ -50,7 +50,7 @@ final class CommentBlock extends AbstractBlock implements CommentBlockInterface
 	/**
 	 * @return string
 	 */
-	final public function getBlockType()
+	public function getBlockType()
 	{
 		return BlockInterface::TYPE_COMMENT;
 	}
@@ -59,7 +59,7 @@ final class CommentBlock extends AbstractBlock implements CommentBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	final public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler)
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onCommentBlock($this->getComment());

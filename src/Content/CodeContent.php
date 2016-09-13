@@ -50,7 +50,7 @@ final class CodeContent extends AbstractContent implements CodeContentInterface
 	/**
 	 * @return string
 	 */
-	final public function getContentType()
+	public function getContentType()
 	{
 		return ContentInterface::TYPE_CODE;
 	}

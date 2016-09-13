@@ -20,7 +20,7 @@ final class ParagraphBlock extends AbstractBlock implements ParagraphBlockInterf
 	/**
 	 * @return string
 	 */
-	final public function getBlockType()
+	public function getBlockType()
 	{
 		return BlockInterface::TYPE_PARAGRAPH;
 	}

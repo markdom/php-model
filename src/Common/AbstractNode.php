@@ -15,7 +15,7 @@ abstract class AbstractNode implements NodeInterface
 	/**
 	 * @return bool
 	 */
-	public function hasChildren()
+	final public function hasChildren()
 	{
 		return !$this->getChildren()->isEmpty();
 	}
@@ -23,7 +23,7 @@ abstract class AbstractNode implements NodeInterface
 	/**
 	 * @return int
 	 */
-	public function countChildren()
+	final public function countChildren()
 	{
 		return $this->getChildren()->count();
 	}

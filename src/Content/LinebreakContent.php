@@ -17,40 +17,40 @@ final class LinebreakContent extends AbstractContent implements LinebreakContent
 	/**
 	 * @var bool
 	 */
-	private $hardbreak;
+	private $hard;
 
 	/**
 	 * LinebreakContent constructor.
 	 *
-	 * @param bool $hardbreak
+	 * @param bool $hard
 	 */
-	public function __construct($hardbreak)
+	public function __construct($hard)
 	{
-		$this->hardbreak = $hardbreak;
+		$this->hard = $hard;
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
-	public function isHardbreak()
+	public function isHard()
 	{
-		return $this->hardbreak;
+		return $this->hard;
 	}
 
 	/**
-	 * @param boolean $hardbreak
+	 * @param bool $hard
 	 * @return $this
 	 */
-	public function setHardbreak($hardbreak)
+	public function setHard($hard)
 	{
-		$this->hardbreak = $hardbreak;
+		$this->hard = $hard;
 		return $this;
 	}
 
 	/**
 	 * @return string
 	 */
-	final public function getContentType()
+	public function getContentType()
 	{
 		return ContentInterface::TYPE_LINE_BREAK;
 	}
@@ -61,7 +61,7 @@ final class LinebreakContent extends AbstractContent implements LinebreakContent
 	public function onHandle(HandlerInterface $markdomHandler)
 	{
 		$markdomHandler->onContentBegin($this->getContentType());
-		$markdomHandler->onLineBreakContent($this->isHardbreak());
+		$markdomHandler->onLineBreakContent($this->isHard());
 		$markdomHandler->onContentEnd($this->getContentType());
 	}
 

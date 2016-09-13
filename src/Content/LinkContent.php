@@ -77,7 +77,7 @@ final class LinkContent extends AbstractContent implements LinkContentInterface
 	/**
 	 * @return string
 	 */
-	final public function getContentType()
+	public function getContentType()
 	{
 		return ContentInterface::TYPE_LINK;
 	}

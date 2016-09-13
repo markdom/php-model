@@ -48,4 +48,16 @@ trait BlockParentTrait
 		return $this;
 	}
 
+	/**
+	 * @param BlockInterface[] $blocks
+	 * @return $this
+	 */
+	final public function addBlocks(array $blocks)
+	{
+		foreach ($blocks as $block) {
+			$this->getBlocks()->append($block);
+		}
+		return $this;
+	}
+
 }

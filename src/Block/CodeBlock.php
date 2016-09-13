@@ -75,7 +75,7 @@ final class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	/**
 	 * @return string
 	 */
-	final public function getBlockType()
+	public function getBlockType()
 	{
 		return BlockInterface::TYPE_CODE;
 	}
@@ -84,7 +84,7 @@ final class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	final public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler)
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onCodeBlock($this->getCode(), $this->getHint());

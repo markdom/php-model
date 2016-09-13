@@ -42,10 +42,21 @@ trait ContentParentTrait
 	 * @param ContentInterface $content
 	 * @return $this
 	 */
-	public function addContent(ContentInterface $content)
+	final public function addContent(ContentInterface $content)
 	{
-		$this->getContents()
-			->append($content);
+		$this->getContents()->append($content);
+		return $this;
+	}
+
+	/**
+	 * @param ContentInterface[] $contents
+	 * @return $this
+	 */
+	final public function addContents(array $contents)
+	{
+		foreach ($contents as $content) {
+			$this->getContents()->append($content);
+		}
 		return $this;
 	}
 

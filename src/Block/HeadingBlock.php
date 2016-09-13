@@ -53,7 +53,7 @@ final class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	/**
 	 * @return string
 	 */
-	final public function getBlockType()
+	public function getBlockType()
 	{
 		return BlockInterface::TYPE_HEADING;
 	}
@@ -62,7 +62,7 @@ final class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	final public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler)
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onHeadingBlockBegin($this->getLevel());

@@ -52,7 +52,7 @@ final class EmphasisContent extends AbstractContent implements EmphasisContentIn
 	/**
 	 * @return string
 	 */
-	final public function getContentType()
+	public function getContentType()
 	{
 		return ContentInterface::TYPE_EMPHASIS;
 	}

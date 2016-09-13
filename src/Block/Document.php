@@ -18,6 +18,14 @@ final class Document extends AbstractNode implements DocumentInterface
 	use BlockParentTrait;
 
 	/**
+	 * @return null
+	 */
+	public function getIndex()
+	{
+		return null;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getNodeType()
@@ -31,6 +39,14 @@ final class Document extends AbstractNode implements DocumentInterface
 	public function getParent()
 	{
 		return null;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function hasParent()
+	{
+		return false;
 	}
 
 	/**
