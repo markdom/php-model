@@ -39,10 +39,10 @@ final class UnorderedListBlock extends AbstractBlock implements UnorderedListBlo
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onUnorderedListBlockBegin();
-		for ($i = 0, $n = $this->getListItems()->size(); $i < $n; $i++) {
-			$listItem = $this->getListItems()->get($i);
+		for ($i = 0, $n = $this->getItems()->size(); $i < $n; $i++) {
+			$listItem = $this->getItems()->get($i);
 			$listItem->onHandle($markdomHandler);
-			if (!$this->getListItems()->isLast($listItem)) {
+			if (!$this->getItems()->isLast($listItem)) {
 				$markdomHandler->onNextListItem();
 			}
 		}

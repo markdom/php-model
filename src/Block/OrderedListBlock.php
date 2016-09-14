@@ -72,10 +72,10 @@ final class OrderedListBlock extends AbstractBlock implements OrderedListBlockIn
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onOrderedListBlockBegin($this->getStartIndex());
-		for ($i = 0, $n = $this->getListItems()->size(); $i < $n; $i++) {
-			$listItem = $this->getListItems()->get($i);
+		for ($i = 0, $n = $this->getItems()->size(); $i < $n; $i++) {
+			$listItem = $this->getItems()->get($i);
 			$listItem->onHandle($markdomHandler);
-			if (!$this->getListItems()->isLast($listItem)) {
+			if (!$this->getItems()->isLast($listItem)) {
 				$markdomHandler->onNextListItem();
 			}
 		}

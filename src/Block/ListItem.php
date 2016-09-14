@@ -46,7 +46,7 @@ final class ListItem extends AbstractNode implements ListItemInterface
 	 */
 	public function getIndex()
 	{
-		return $this->getParent()->getListItems()->indexOf($this);
+		return $this->getParent()->getItems()->indexOf($this);
 	}
 
 	/**

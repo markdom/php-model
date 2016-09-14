@@ -22,7 +22,7 @@
   },
   "require": {
     "php": ">=5.4",
-    "markdom/model-interface": "^1.0.10"
+    "markdom/model-interface": "^1.0.12"
   },
   "require-dev": {
     "markdom/handler": "^1.0.14",

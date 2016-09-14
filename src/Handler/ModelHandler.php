@@ -103,7 +103,7 @@ class ModelHandler implements HandlerInterface
 	{
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
-		$parent->getBlocks()->append(new CodeBlock($code, $hint));
+		$parent->addBlock(new CodeBlock($code, $hint));
 	}
 
 	/**
@@ -114,7 +114,7 @@ class ModelHandler implements HandlerInterface
 	{
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
-		$parent->getBlocks()->append(new CommentBlock($comment));
+		$parent->addBlock(new CommentBlock($comment));
 	}
 
 	/**
@@ -124,7 +124,7 @@ class ModelHandler implements HandlerInterface
 	{
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
-		$parent->getBlocks()->append(new DivisionBlock());
+		$parent->addBlock(new DivisionBlock());
 	}
 
 	/**
@@ -136,7 +136,7 @@ class ModelHandler implements HandlerInterface
 		$heading = new HeadingBlock($level);
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
-		$parent->getBlocks()->append($heading);
+		$parent->addBlock($heading);
 		$this->contentParentStack->push($heading);
 	}
 
@@ -157,7 +157,7 @@ class ModelHandler implements HandlerInterface
 		$list = new UnorderedListBlock();
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
-		$parent->getBlocks()->append($list);
+		$parent->addBlock($list);
 		$this->listBlockStack->push($list);
 	}
 
@@ -170,7 +170,7 @@ class ModelHandler implements HandlerInterface
 		$list = new OrderedListBlock($startIndex);
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
-		$parent->getBlocks()->append($list);
+		$parent->addBlock($list);
 		$this->listBlockStack->push($list);
 	}
 
@@ -189,7 +189,7 @@ class ModelHandler implements HandlerInterface
 		$listItem = new ListItem();
 		/** @var ListBlockInterface $parent */
 		$parent = $this->listBlockStack->get();
-		$parent->getListItems()->append($listItem);
+		$parent->addItem($listItem);
 		$this->blockParentStack->push($listItem);
 	}
 
@@ -240,7 +240,7 @@ class ModelHandler implements HandlerInterface
 		$paragraph = new ParagraphBlock();
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
-		$parent->getBlocks()->append($paragraph);
+		$parent->addBlock($paragraph);
 		$this->contentParentStack->push($paragraph);
 	}
 
@@ -260,7 +260,7 @@ class ModelHandler implements HandlerInterface
 		$quote = new QuoteBlock();
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
-		$parent->getBlocks()->append($quote);
+		$parent->addBlock($quote);
 		$this->blockParentStack->push($quote);
 	}
 
@@ -318,7 +318,7 @@ class ModelHandler implements HandlerInterface
 		$code = new CodeContent($code);
 		/** @var ContentParentInterface $parent */
 		$parent = $this->contentParentStack->get();
-		$parent->getContents()->append($code);
+		$parent->addContent($code);
 	}
 
 	/**
@@ -330,7 +330,7 @@ class ModelHandler implements HandlerInterface
 		$emphasis = new EmphasisContent($level);
 		/** @var ContentParentInterface $parent */
 		$parent = $this->contentParentStack->get();
-		$parent->getContents()->append($emphasis);
+		$parent->addContent($emphasis);
 		$this->contentParentStack->push($emphasis);
 	}
 
@@ -354,7 +354,7 @@ class ModelHandler implements HandlerInterface
 		$image = new ImageContent($uri, $title, $alternative);
 		/** @var ContentParentInterface $parent */
 		$parent = $this->contentParentStack->get();
-		$parent->getContents()->append($image);
+		$parent->addContent($image);
 	}
 
 	/**
@@ -366,7 +366,7 @@ class ModelHandler implements HandlerInterface
 		$linebreak = new LinebreakContent($hard);
 		/** @var ContentParentInterface $parent */
 		$parent = $this->contentParentStack->get();
-		$parent->getContents()->append($linebreak);
+		$parent->addContent($linebreak);
 	}
 
 	/**
@@ -379,7 +379,7 @@ class ModelHandler implements HandlerInterface
 		$link = new LinkContent($uri, $title);
 		/** @var ContentParentInterface $parent */
 		$parent = $this->contentParentStack->get();
-		$parent->getContents()->append($link);
+		$parent->addContent($link);
 		$this->contentParentStack->push($link);
 	}
 
@@ -402,7 +402,7 @@ class ModelHandler implements HandlerInterface
 		$text = new TextContent($text);
 		/** @var ContentParentInterface $parent */
 		$parent = $this->contentParentStack->get();
-		$parent->getContents()->append($text);
+		$parent->addContent($text);
 	}
 
 	/**
