@@ -31,7 +31,7 @@ class HtmlTest extends \PHPUnit_Framework_TestCase
 		$handler
 			->setEscapeHtml(true)
 			->setBreakSoftBreaks(false);
-		$document->handle($handler);
+		$document->dispatchTo($handler);
 		$htmlString = $handler->getResult();
 		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.html'), $htmlString);
 	}

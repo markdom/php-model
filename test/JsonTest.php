@@ -27,7 +27,7 @@ class JsonTest extends \PHPUnit_Framework_TestCase
 		$handler
 			->setPrettyPrint(true)
 			->setEscapeUnicode(true);
-		$document->handle($handler);
+		$document->dispatchTo($handler);
 		$jsonString = $handler->getResult();
 		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.json'), $jsonString);
 	}

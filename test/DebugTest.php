@@ -24,7 +24,7 @@ class DebugTest extends \PHPUnit_Framework_TestCase
 
 		// Dispatch the Markdom Document as JSON string
 		$handler = new DebugHandler();
-		$document->handle($handler);
+		$document->dispatchTo($handler);
 		$debugString = $handler->getResult();
 		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.debug.txt'), $debugString);
 	}

@@ -59,17 +59,9 @@ final class Document extends AbstractNode implements DocumentInterface
 
 	/**
 	 * @param HandlerInterface $markdomHandler
-	 * @return void
+	 * @return mixed
 	 */
-	public function handle(HandlerInterface $markdomHandler)
-	{
-		$this->onHandle($markdomHandler);
-	}
-
-	/**
-	 * @param HandlerInterface $markdomHandler
-	 */
-	private function onHandle(HandlerInterface $markdomHandler)
+	public function dispatchTo(HandlerInterface $markdomHandler)
 	{
 		$markdomHandler->onDocumentBegin();
 		$markdomHandler->onBlocksBegin();
@@ -82,6 +74,15 @@ final class Document extends AbstractNode implements DocumentInterface
 		}
 		$markdomHandler->onBlocksEnd();
 		$markdomHandler->onDocumentEnd();
+		return $markdomHandler->getResult();
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isReusable()
+	{
+		return true;
 	}
 
 	/**

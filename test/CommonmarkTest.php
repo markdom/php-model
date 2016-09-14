@@ -24,7 +24,7 @@ class CommonmarkTest extends \PHPUnit_Framework_TestCase
 
 		// Dispatch the Markdom Document as Commonmark string
 		$handler = new CommonmarkHandler();
-		$document->handle($handler);
+		$document->dispatchTo($handler);
 		$commonmarkString = $handler->getResult();
 		$this->assertEquals(file_get_contents(__DIR__ . '/test-result.md'), $commonmarkString);
 	}

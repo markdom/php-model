@@ -29,7 +29,7 @@ class XmlTest extends \PHPUnit_Framework_TestCase
 		// Dispatch the Markdom Document as XML string
 		$handler = new XmlHandler();
 		$handler->setPrettyPrint(true);
-		$document->handle($handler);
+		$document->dispatchTo($handler);
 		$xmlString = $handler->getResult()->saveXML();
 		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.xml'), $xmlString);
 	}
