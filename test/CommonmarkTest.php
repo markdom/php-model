@@ -18,8 +18,8 @@ class CommonmarkTest extends \PHPUnit_Framework_TestCase
 	{
 		// Dispatch a Commonmark file as Markdom Document
 		$handler = new ModelHandler();
-		$dispatcher = new CommonmarkDispatcher($handler);
-		$dispatcher->processFile(__DIR__ . '/test-data.md');
+		$dispatcher = new CommonmarkDispatcher(file_get_contents(__DIR__ . '/test-data.md'));
+		$dispatcher->dispatchTo($handler);
 		$document = $handler->getResult();
 
 		// Dispatch the Markdom Document as Commonmark string

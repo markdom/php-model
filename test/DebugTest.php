@@ -18,8 +18,8 @@ class DebugTest extends \PHPUnit_Framework_TestCase
 	{
 		// Dispatch a JSON file as Markdom Document
 		$handler = new ModelHandler();
-		$dispatcher = new JsonDispatcher($handler);
-		$dispatcher->process(file_get_contents(__DIR__ . '/test-data.json'));
+		$dispatcher = new JsonDispatcher(file_get_contents(__DIR__ . '/test-data.json'));
+		$dispatcher->dispatchTo($handler);
 		$document = $handler->getResult();
 
 		// Dispatch the Markdom Document as JSON string

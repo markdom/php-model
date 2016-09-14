@@ -22,8 +22,8 @@ class XmlTest extends \PHPUnit_Framework_TestCase
 		$xmlDocument->preserveWhiteSpace = false;
 		$xmlDocument->loadXML($xmlString);
 		$handler = new ModelHandler();
-		$dispatcher = new XmlDispatcher($handler);
-		$dispatcher->process($xmlDocument);
+		$dispatcher = new XmlDispatcher($xmlDocument);
+		$dispatcher->dispatchTo($handler);
 		$document = $handler->getResult();
 
 		// Dispatch the Markdom Document as XML string
