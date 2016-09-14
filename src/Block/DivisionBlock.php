@@ -3,7 +3,6 @@
 namespace Markdom\Model\Block;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Block\BlockInterface;
 use Markdom\ModelInterface\Block\DivisionBlockInterface;
 
 /**
@@ -19,7 +18,7 @@ final class DivisionBlock extends AbstractBlock implements DivisionBlockInterfac
 	 */
 	public function getBlockType()
 	{
-		return BlockInterface::TYPE_DIVISION;
+		return self::BLOCK_TYPE_DIVISION;
 	}
 
 	/**

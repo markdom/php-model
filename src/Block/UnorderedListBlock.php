@@ -3,7 +3,6 @@
 namespace Markdom\Model\Block;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Block\BlockInterface;
 use Markdom\ModelInterface\Block\UnorderedListBlockInterface;
 
 /**
@@ -19,9 +18,17 @@ final class UnorderedListBlock extends AbstractBlock implements UnorderedListBlo
 	/**
 	 * @return string
 	 */
+	public function getListBlockType()
+	{
+		return self::LIST_BLOCK_TYPE_UNORDERED_LIST;
+	}
+
+	/**
+	 * @return string
+	 */
 	public function getBlockType()
 	{
-		return BlockInterface::TYPE_UNORDERED_LIST;
+		return self::BLOCK_TYPE_UNORDERED_LIST;
 	}
 
 	/**

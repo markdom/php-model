@@ -3,7 +3,6 @@
 namespace Markdom\Model\Block;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Block\BlockInterface;
 use Markdom\ModelInterface\Block\QuoteBlockInterface;
 
 /**
@@ -19,9 +18,17 @@ final class QuoteBlock extends AbstractBlock implements QuoteBlockInterface
 	/**
 	 * @return string
 	 */
+	public function getBlockParentType()
+	{
+		return self::BLOCK_PARENT_TYPE_QUOTE;
+	}
+
+	/**
+	 * @return string
+	 */
 	public function getBlockType()
 	{
-		return BlockInterface::TYPE_QUOTE;
+		return self::BLOCK_TYPE_QUOTE;
 	}
 
 	/**

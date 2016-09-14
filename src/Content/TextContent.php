@@ -3,7 +3,6 @@
 namespace Markdom\Model\Content;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Content\ContentInterface;
 use Markdom\ModelInterface\Content\TextContentInterface;
 
 /**
@@ -52,7 +51,7 @@ final class TextContent extends AbstractContent implements TextContentInterface
 	 */
 	public function getContentType()
 	{
-		return ContentInterface::TYPE_TEXT;
+		return self::CONTENT_TYPE_TEXT;
 	}
 
 	/**

@@ -3,7 +3,6 @@
 namespace Markdom\Model\Content;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Content\ContentInterface;
 use Markdom\ModelInterface\Content\LinkContentInterface;
 
 /**
@@ -77,9 +76,17 @@ final class LinkContent extends AbstractContent implements LinkContentInterface
 	/**
 	 * @return string
 	 */
+	public function getContentParentType()
+	{
+		return self::CONTENT_PARENT_TYPE_LINK;
+	}
+
+	/**
+	 * @return string
+	 */
 	public function getContentType()
 	{
-		return ContentInterface::TYPE_LINK;
+		return self::CONTENT_TYPE_LINK;
 	}
 
 	/**

@@ -3,7 +3,6 @@
 namespace Markdom\Model\Content;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Content\ContentInterface;
 use Markdom\ModelInterface\Content\LinebreakContentInterface;
 
 /**
@@ -52,7 +51,7 @@ final class LinebreakContent extends AbstractContent implements LinebreakContent
 	 */
 	public function getContentType()
 	{
-		return ContentInterface::TYPE_LINE_BREAK;
+		return self::CONTENT_TYPE_LINE_BREAK;
 	}
 
 	/**

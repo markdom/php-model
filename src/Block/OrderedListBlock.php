@@ -3,7 +3,6 @@
 namespace Markdom\Model\Block;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Block\BlockInterface;
 use Markdom\ModelInterface\Block\OrderedListBlockInterface;
 
 /**
@@ -34,9 +33,17 @@ final class OrderedListBlock extends AbstractBlock implements OrderedListBlockIn
 	/**
 	 * @return string
 	 */
+	public function getListBlockType()
+	{
+		return self::LIST_BLOCK_TYPE_ORDERED_LIST;
+	}
+
+	/**
+	 * @return string
+	 */
 	public function getBlockType()
 	{
-		return BlockInterface::TYPE_ORDERED_LIST;
+		return self::BLOCK_TYPE_ORDERED_LIST;
 	}
 
 	/**

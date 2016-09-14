@@ -4,7 +4,6 @@ namespace Markdom\Model\Content;
 
 use Markdom\HandlerInterface\HandlerInterface;
 use Markdom\ModelInterface\Content\CodeContentInterface;
-use Markdom\ModelInterface\Content\ContentInterface;
 
 /**
  * Class CodeContent
@@ -52,7 +51,7 @@ final class CodeContent extends AbstractContent implements CodeContentInterface
 	 */
 	public function getContentType()
 	{
-		return ContentInterface::TYPE_CODE;
+		return self::CONTENT_TYPE_CODE;
 	}
 
 	/**

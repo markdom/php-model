@@ -3,7 +3,6 @@
 namespace Markdom\Model\Block;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Block\BlockInterface;
 use Markdom\ModelInterface\Block\CodeBlockInterface;
 
 /**
@@ -77,7 +76,7 @@ final class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	 */
 	public function getBlockType()
 	{
-		return BlockInterface::TYPE_CODE;
+		return self::BLOCK_TYPE_CODE;
 	}
 
 	/**

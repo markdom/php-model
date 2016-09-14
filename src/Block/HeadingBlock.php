@@ -51,11 +51,27 @@ final class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	}
 
 	/**
+	 * @return BlockInterface
+	 */
+	public function getBlock()
+	{
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getContentParentType()
+	{
+		return self::CONTENT_PARENT_TYPE_HEADING;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getBlockType()
 	{
-		return BlockInterface::TYPE_HEADING;
+		return self::BLOCK_TYPE_HEADING;
 	}
 
 	/**

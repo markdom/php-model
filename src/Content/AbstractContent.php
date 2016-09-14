@@ -5,7 +5,7 @@ namespace Markdom\Model\Content;
 use Markdom\Model\Common\AbstractNode;
 use Markdom\Model\Common\EmptyCountableIterator;
 use Markdom\Model\Exception\MarkdomModelException;
-use Markdom\ModelInterface\Block\ContentParentBlockInterface;
+use Markdom\ModelInterface\Block\BlockInterface;
 use Markdom\ModelInterface\Block\DocumentInterface;
 use Markdom\ModelInterface\Common\CountableIteratorInterface;
 use Markdom\ModelInterface\Common\NodeInterface;
@@ -38,7 +38,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	 */
 	final public function getIndex()
 	{
-		return $this->getBlock()->getContents()->indexOf($this);
+		return $this->getParent()->getContents()->indexOf($this);
 	}
 
 	/**
@@ -58,7 +58,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	}
 
 	/**
-	 * @return ContentParentBlockInterface
+	 * @return BlockInterface
 	 */
 	final public function getBlock()
 	{

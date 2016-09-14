@@ -34,6 +34,14 @@ final class Document extends AbstractNode implements DocumentInterface
 	}
 
 	/**
+	 * @return string
+	 */
+	public function getBlockParentType()
+	{
+		return self::BLOCK_PARENT_TYPE_DOCUMENT;
+	}
+
+	/**
 	 * @return NodeInterface
 	 */
 	public function getParent()

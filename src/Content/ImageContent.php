@@ -3,7 +3,6 @@
 namespace Markdom\Model\Content;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Content\ContentInterface;
 use Markdom\ModelInterface\Content\ImageContentInterface;
 
 /**
@@ -102,7 +101,7 @@ final class ImageContent extends AbstractContent implements ImageContentInterfac
 	 */
 	public function getContentType()
 	{
-		return ContentInterface::TYPE_IMAGE;
+		return self::CONTENT_TYPE_IMAGE;
 	}
 
 	/**

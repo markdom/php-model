@@ -3,7 +3,6 @@
 namespace Markdom\Model\Block;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Block\BlockInterface;
 use Markdom\ModelInterface\Block\CommentBlockInterface;
 
 /**
@@ -52,7 +51,7 @@ final class CommentBlock extends AbstractBlock implements CommentBlockInterface
 	 */
 	public function getBlockType()
 	{
-		return BlockInterface::TYPE_COMMENT;
+		return self::BLOCK_TYPE_COMMENT;
 	}
 
 	/**

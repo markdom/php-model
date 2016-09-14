@@ -3,7 +3,6 @@
 namespace Markdom\Model\Content;
 
 use Markdom\HandlerInterface\HandlerInterface;
-use Markdom\ModelInterface\Content\ContentInterface;
 use Markdom\ModelInterface\Content\EmphasisContentInterface;
 
 /**
@@ -52,9 +51,17 @@ final class EmphasisContent extends AbstractContent implements EmphasisContentIn
 	/**
 	 * @return string
 	 */
+	public function getContentParentType()
+	{
+		return self::CONTENT_PARENT_TYPE_EMPHASIS;
+	}
+
+	/**
+	 * @return string
+	 */
 	public function getContentType()
 	{
-		return ContentInterface::TYPE_EMPHASIS;
+		return self::CONTENT_TYPE_EMPHASIS;
 	}
 
 	/**

@@ -28,6 +28,14 @@ final class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return string
 	 */
+	public function getBlockParentType()
+	{
+		return self::BLOCK_PARENT_TYPE_LIST_ITEM;
+	}
+
+	/**
+	 * @return string
+	 */
 	public function getNodeType()
 	{
 		return NodeInterface::NODE_TYPE_LIST_ITEM;
