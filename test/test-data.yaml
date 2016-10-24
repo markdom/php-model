@@ -1,0 +1,749 @@
+---
+version:
+  major: 1
+  minor: 0
+blocks:
+  - 
+    type: Heading
+    level: 1
+    contents:
+      - 
+        type: Text
+        text: some markdown
+  - 
+    type: Heading
+    level: 2
+    contents:
+      - 
+        type: Text
+        text: some markdown
+  - 
+    type: Heading
+    level: 3
+    contents:
+      - 
+        type: Text
+        text: some markdown
+  - 
+    type: Comment
+    comment: >
+      Etiam porta sem malesuada magna mollis
+      euismod.
+  - 
+    type: Heading
+    level: 4
+    contents:
+      - 
+        type: Text
+        text: some markdown
+  - 
+    type: Heading
+    level: 5
+    contents:
+      - 
+        type: Text
+        text: some markdown
+  - 
+    type: Heading
+    level: 6
+    contents:
+      - 
+        type: Text
+        text: some markdown
+  - 
+    type: Paragraph
+    contents:
+      - 
+        type: Text
+        text: in markdown süntax
+      - 
+        type: LineBreak
+        hard: false
+      - 
+        type: Text
+        text: a simple para-graph can
+      - 
+        type: LineBreak
+        hard: false
+      - 
+        type: Text
+        text: span more than one line
+  - 
+    type: Paragraph
+    contents:
+      - 
+        type: Text
+        text: 'this '
+      - 
+        type: Emphasis
+        level: 1
+        contents:
+          - 
+            type: Text
+            text: is
+      - 
+        type: Text
+        text: ' a not so simple '
+      - 
+        type: Emphasis
+        level: 2
+        contents:
+          - 
+            type: Text
+            text: paragraph
+      - 
+        type: Text
+        text: ' with different kinds of '
+      - 
+        type: Code
+        code: emphasises
+      - 
+        type: Text
+        text: ' '
+      - 
+        type: Code
+        code: ​`​
+      - 
+        type: Text
+        text: ', ~~an obolete section~~, and even '
+      - 
+        type: Emphasis
+        level: 1
+        contents:
+          - 
+            type: Text
+            text: 'nested '
+          - 
+            type: Emphasis
+            level: 2
+            contents:
+              - 
+                type: Link
+                uri: http://google.de
+                title: Link to Google
+                contents:
+                  - 
+                    type: Text
+                    text: emphasises
+  - 
+    type: Paragraph
+    contents:
+      - 
+        type: Image
+        uri: test.png
+        title: Title
+        alternative: alt text
+  - 
+    type: Heading
+    level: 3
+    contents:
+      - 
+        type: Text
+        text: non
+      - 
+        type: Text
+        text: -trivial nested list
+  - 
+    type: UnorderedList
+    items:
+      - 
+        blocks:
+          - 
+            type: OrderedList
+            startIndex: 1
+            items:
+              - 
+                blocks:
+                  - 
+                    type: Paragraph
+                    contents:
+                      - 
+                        type: Text
+                        text: item number one, subitem one
+                      - 
+                        type: Text
+                        text: '. '
+                      - 
+                        type: Emphasis
+                        level: 2
+                        contents:
+                          - 
+                            type: Text
+                            text: an introduction
+                      - 
+                        type: Text
+                        text: ""
+                      - 
+                        type: LineBreak
+                        hard: true
+                      - 
+                        type: Text
+                        text: this one covers more than one line
+                      - 
+                        type: LineBreak
+                        hard: true
+                      - 
+                        type: Text
+                        text: in fact, it covers three lines
+                  - 
+                    type: UnorderedList
+                    items:
+                      - 
+                        blocks:
+                          - 
+                            type: Paragraph
+                            contents:
+                              - 
+                                type: Text
+                                text: >
+                                  item number one, subitem one, subsubitem
+                                  one
+                              - 
+                                type: Text
+                                text: . the 1st paragraph
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: this one covers more than one line
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: in fact, it covers three lines
+                          - 
+                            type: Quote
+                            blocks:
+                              - 
+                                type: Paragraph
+                                contents:
+                                  - 
+                                    type: Text
+                                    text: >
+                                      item number one, subitem one, subsubitem
+                                      one
+                                  - 
+                                    type: Text
+                                    text: . the 2st paragraph
+                                  - 
+                                    type: LineBreak
+                                    hard: false
+                                  - 
+                                    type: Text
+                                    text: this one covers more than one line
+                                  - 
+                                    type: LineBreak
+                                    hard: false
+                                  - 
+                                    type: Text
+                                    text: in fact, it covers three lines
+                      - 
+                        blocks:
+                          - 
+                            type: Paragraph
+                            contents:
+                              - 
+                                type: Text
+                                text: >
+                                  item number one, subitem one, subsubitem
+                                  two
+                              - 
+                                type: Text
+                                text: . the 1st paragraph
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: this one covers more than one line
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: in fact, it covers three lines
+                          - 
+                            type: Code
+                            code: |
+                              item number one, subitem one, subsubitem two. the 2nd paragraph
+                              this one covers more than one line
+                              in fact, it covers three lines
+                            hint: ""
+                  - 
+                    type: Quote
+                    blocks:
+                      - 
+                        type: Paragraph
+                        contents:
+                          - 
+                            type: Text
+                            text: item number one, subitem one
+                          - 
+                            type: Text
+                            text: '. '
+                          - 
+                            type: Emphasis
+                            level: 2
+                            contents:
+                              - 
+                                type: Text
+                                text: some final words
+                          - 
+                            type: LineBreak
+                            hard: false
+                          - 
+                            type: Text
+                            text: this one covers more than one line
+                          - 
+                            type: LineBreak
+                            hard: false
+                          - 
+                            type: Text
+                            text: in fact, it covers three lines
+              - 
+                blocks:
+                  - 
+                    type: Paragraph
+                    contents:
+                      - 
+                        type: Text
+                        text: item number one, subitem two
+                      - 
+                        type: Text
+                        text: '. '
+                      - 
+                        type: Emphasis
+                        level: 2
+                        contents:
+                          - 
+                            type: Text
+                            text: an introduction
+                      - 
+                        type: LineBreak
+                        hard: false
+                      - 
+                        type: Text
+                        text: this one covers more than one line
+                      - 
+                        type: LineBreak
+                        hard: false
+                      - 
+                        type: Text
+                        text: in fact, it covers three lines
+                  - 
+                    type: UnorderedList
+                    items:
+                      - 
+                        blocks:
+                          - 
+                            type: Paragraph
+                            contents:
+                              - 
+                                type: Text
+                                text: >
+                                  item number one, subitem two, subsubitem
+                                  one
+                              - 
+                                type: Text
+                                text: . the 1st paragraph
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: this one covers more than one line
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: in fact, it covers three lines
+                          - 
+                            type: Quote
+                            blocks:
+                              - 
+                                type: Paragraph
+                                contents:
+                                  - 
+                                    type: Text
+                                    text: >
+                                      item number one, subitem two, subsubitem
+                                      one
+                                  - 
+                                    type: Text
+                                    text: >
+                                      . the 2nd paragraphthis one covers more
+                                      than one line
+                      - 
+                        blocks:
+                          - 
+                            type: Paragraph
+                            contents:
+                              - 
+                                type: Text
+                                text: >
+                                  item number one, subitem two, subsubitem
+                                  two
+                              - 
+                                type: Text
+                                text: . the 1st paragraph
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: this one covers more than one line
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: in fact, it covers three lines
+                          - 
+                            type: Code
+                            code: |
+                              item number one, subitem two, subsubitem two. the 2nd paragraph
+                              this one covers more than one line
+                            hint: ""
+                  - 
+                    type: Quote
+                    blocks:
+                      - 
+                        type: Paragraph
+                        contents:
+                          - 
+                            type: Text
+                            text: item number one, subitem two
+                          - 
+                            type: Text
+                            text: .
+                          - 
+                            type: Emphasis
+                            level: 2
+                            contents:
+                              - 
+                                type: Text
+                                text: some final words
+                          - 
+                            type: LineBreak
+                            hard: false
+                          - 
+                            type: Text
+                            text: this one covers more than one line
+                          - 
+                            type: LineBreak
+                            hard: false
+                          - 
+                            type: Text
+                            text: in fact, it covers three lines
+      - 
+        blocks:
+          - 
+            type: Quote
+            blocks:
+              - 
+                type: Paragraph
+                contents:
+                  - 
+                    type: Text
+                    text: item number two
+                  - 
+                    type: Text
+                    text: '. '
+                  - 
+                    type: Emphasis
+                    level: 2
+                    contents:
+                      - 
+                        type: Text
+                        text: an introduction
+                  - 
+                    type: LineBreak
+                    hard: false
+                  - 
+                    type: Text
+                    text: this one covers more than one line
+              - 
+                type: UnorderedList
+                items:
+                  - 
+                    blocks:
+                      - 
+                        type: Paragraph
+                        contents:
+                          - 
+                            type: Text
+                            text: item number two, subitem one
+                          - 
+                            type: Text
+                            text: . the 1st paragraph
+                          - 
+                            type: LineBreak
+                            hard: false
+                          - 
+                            type: Text
+                            text: this one covers more than one line
+                      - 
+                        type: Quote
+                        blocks:
+                          - 
+                            type: Paragraph
+                            contents:
+                              - 
+                                type: Text
+                                text: item number two, subitem one
+                              - 
+                                type: Text
+                                text: . the 2nd paragraph
+                              - 
+                                type: LineBreak
+                                hard: false
+                              - 
+                                type: Text
+                                text: this one covers more than one line
+                  - 
+                    blocks:
+                      - 
+                        type: Paragraph
+                        contents:
+                          - 
+                            type: Text
+                            text: item number two, subitem two
+                          - 
+                            type: Text
+                            text: . the 1st paragraph
+                          - 
+                            type: LineBreak
+                            hard: false
+                          - 
+                            type: Text
+                            text: this one covers more than one line
+                      - 
+                        type: Code
+                        code: |
+                          item number two, subitem two. the 2nd paragraph
+                          this one covers more than one line
+                        hint: ""
+              - 
+                type: Quote
+                blocks:
+                  - 
+                    type: Paragraph
+                    contents:
+                      - 
+                        type: Text
+                        text: item number two
+                      - 
+                        type: Text
+                        text: '. '
+                      - 
+                        type: Emphasis
+                        level: 2
+                        contents:
+                          - 
+                            type: Text
+                            text: some final words
+                      - 
+                        type: LineBreak
+                        hard: false
+                      - 
+                        type: Text
+                        text: this one covers more than two line
+  - 
+    type: Heading
+    level: 3
+    contents:
+      - 
+        type: Text
+        text: HTML Block
+  - 
+    type: Paragraph
+    contents:
+      - 
+        type: Text
+        text: '<p>Test</p>'
+  - 
+    type: Heading
+    level: 3
+    contents:
+      - 
+        type: Text
+        text: blocks in a quote block
+  - 
+    type: Quote
+    blocks:
+      - 
+        type: Heading
+        level: 4
+        contents:
+          - 
+            type: Text
+            text: heading block in quote block
+      - 
+        type: Paragraph
+        contents:
+          - 
+            type: Text
+            text: >
+              paragraph block in quote block using
+              some
+          - 
+            type: Text
+            text: '<span style="color:red;">'
+          - 
+            type: Text
+            text: CSS
+          - 
+            type: Text
+            text: '</span>'
+          - 
+            type: Text
+            text: ' in inline HTML'
+      - 
+        type: Code
+        code: code block in quote block
+        hint: hint
+      - 
+        type: Division
+      - 
+        type: OrderedList
+        startIndex: 1
+        items:
+          - 
+            blocks:
+              - 
+                type: Paragraph
+                contents:
+                  - 
+                    type: Text
+                    text: list block in quote block
+      - 
+        type: Quote
+        blocks:
+          - 
+            type: Paragraph
+            contents:
+              - 
+                type: Text
+                text: quote block in quote block
+  - 
+    type: Heading
+    level: 3
+    contents:
+      - 
+        type: Text
+        text: blocks in list items
+  - 
+    type: UnorderedList
+    items:
+      - 
+        blocks:
+          - 
+            type: Heading
+            level: 4
+            contents:
+              - 
+                type: Text
+                text: heading block in list item
+      - 
+        blocks:
+          - 
+            type: Paragraph
+            contents:
+              - 
+                type: Text
+                text: paragraph block in list item
+          - 
+            type: Paragraph
+            contents:
+              - 
+                type: Text
+                text: >
+                  second paragraph block in a single list
+                  item
+      - 
+        blocks:
+          - 
+            type: Code
+            code: code block in list item
+            hint: hint
+      - 
+        blocks:
+          - 
+            type: Division
+      - 
+        blocks:
+          - 
+            type: OrderedList
+            startIndex: 1
+            items:
+              - 
+                blocks:
+                  - 
+                    type: Paragraph
+                    contents:
+                      - 
+                        type: Text
+                        text: list block in list item
+      - 
+        blocks:
+          - 
+            type: Quote
+            blocks:
+              - 
+                type: Paragraph
+                contents:
+                  - 
+                    type: Text
+                    text: quote block in list item
+  - 
+    type: Heading
+    level: 3
+    contents:
+      - 
+        type: Text
+        text: an empty quote
+  - 
+    type: Quote
+    blocks: [ ]
+  - 
+    type: Heading
+    level: 3
+    contents:
+      - 
+        type: Text
+        text: an empty list
+  - 
+    type: Heading
+    level: 3
+    contents:
+      - 
+        type: Text
+        text: some empty list items
+  - 
+    type: OrderedList
+    startIndex: 25240
+    items:
+      - 
+        blocks:
+          - 
+            type: Quote
+            blocks: [ ]
+      - 
+        blocks:
+          - 
+            type: Heading
+            level: 4
+            contents: [ ]
+      - 
+        blocks: [ ]
+      - 
+        blocks: [ ]
+  - 
+    type: Paragraph
+    contents:
+      - 
+        type: Text
+        text: this is the end my friend
