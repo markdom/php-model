@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Block\OrderedListBlockInterface;
  *
  * @package Markenwerk\Markdom\Model\Block
  */
-final class OrderedListBlock extends AbstractBlock implements OrderedListBlockInterface
+class OrderedListBlock extends AbstractBlock implements OrderedListBlockInterface
 {
 
 	use ListBlockTrait;

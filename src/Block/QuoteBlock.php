@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Block\QuoteBlockInterface;
  *
  * @package Markenwerk\Markdom\Model\Block
  */
-final class QuoteBlock extends AbstractBlock implements QuoteBlockInterface
+class QuoteBlock extends AbstractBlock implements QuoteBlockInterface
 {
 
 	use BlockParentTrait;

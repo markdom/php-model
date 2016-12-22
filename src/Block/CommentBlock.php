@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Block\CommentBlockInterface;
  *
  * @package Markdom\Model\Block
  */
-final class CommentBlock extends AbstractBlock implements CommentBlockInterface
+class CommentBlock extends AbstractBlock implements CommentBlockInterface
 {
 
 	/**

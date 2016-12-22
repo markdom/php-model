@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Block\DivisionBlockInterface;
  *
  * @package Markenwerk\Markdom\Model\Block
  */
-final class DivisionBlock extends AbstractBlock implements DivisionBlockInterface
+class DivisionBlock extends AbstractBlock implements DivisionBlockInterface
 {
 
 	/**

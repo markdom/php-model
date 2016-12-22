@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Content\LinkContentInterface;
  *
  * @package Markenwerk\Markdom\Model\Content
  */
-final class LinkContent extends AbstractContent implements LinkContentInterface
+class LinkContent extends AbstractContent implements LinkContentInterface
 {
 
 	use ContentParentTrait;

@@ -15,7 +15,7 @@ use Markdom\ModelInterface\Common\NodeInterface;
  *
  * @package Markenwerk\Markdom\Model\Block
  */
-final class ListItem extends AbstractNode implements ListItemInterface
+class ListItem extends AbstractNode implements ListItemInterface
 {
 
 	use BlockParentTrait;

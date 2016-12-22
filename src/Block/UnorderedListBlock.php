@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Block\UnorderedListBlockInterface;
  *
  * @package Markenwerk\Markdom\Model\Block
  */
-final class UnorderedListBlock extends AbstractBlock implements UnorderedListBlockInterface
+class UnorderedListBlock extends AbstractBlock implements UnorderedListBlockInterface
 {
 
 	use ListBlockTrait;

@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Block\CodeBlockInterface;
  *
  * @package Markenwerk\Markdom\Model\Block
  */
-final class CodeBlock extends AbstractBlock implements CodeBlockInterface
+class CodeBlock extends AbstractBlock implements CodeBlockInterface
 {
 
 	/**

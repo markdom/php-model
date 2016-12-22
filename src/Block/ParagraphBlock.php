@@ -12,7 +12,7 @@ use Markdom\ModelInterface\Block\ParagraphBlockInterface;
  *
  * @package Markenwerk\Markdom\Model\Block
  */
-final class ParagraphBlock extends AbstractBlock implements ParagraphBlockInterface
+class ParagraphBlock extends AbstractBlock implements ParagraphBlockInterface
 {
 
 	use ContentParentTrait;

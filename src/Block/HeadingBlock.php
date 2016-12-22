@@ -12,7 +12,7 @@ use Markdom\ModelInterface\Block\HeadingBlockInterface;
  *
  * @package Markenwerk\Markdom\Model\Block
  */
-final class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
+class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 {
 
 	use ContentParentTrait;

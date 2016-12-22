@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Content\ImageContentInterface;
  *
  * @package Markenwerk\Markdom\Model\Content
  */
-final class ImageContent extends AbstractContent implements ImageContentInterface
+class ImageContent extends AbstractContent implements ImageContentInterface
 {
 
 	/**

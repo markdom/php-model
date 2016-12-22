@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Content\LinebreakContentInterface;
  *
  * @package Markenwerk\Markdom\Model\Content
  */
-final class LinebreakContent extends AbstractContent implements LinebreakContentInterface
+class LinebreakContent extends AbstractContent implements LinebreakContentInterface
 {
 
 	/**

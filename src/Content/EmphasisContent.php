@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Content\EmphasisContentInterface;
  *
  * @package Markenwerk\Markdom\Model\Content
  */
-final class EmphasisContent extends AbstractContent implements EmphasisContentInterface
+class EmphasisContent extends AbstractContent implements EmphasisContentInterface
 {
 
 	use ContentParentTrait;

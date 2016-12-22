@@ -12,7 +12,7 @@ use Markdom\ModelInterface\Common\NodeInterface;
  *
  * @package Markenwerk\Markdom\Model
  */
-final class Document extends AbstractNode implements DocumentInterface
+class Document extends AbstractNode implements DocumentInterface
 {
 
 	use BlockParentTrait;

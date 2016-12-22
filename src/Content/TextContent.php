@@ -10,7 +10,7 @@ use Markdom\ModelInterface\Content\TextContentInterface;
  *
  * @package Markenwerk\Markdom\Model\Content
  */
-final class TextContent extends AbstractContent implements TextContentInterface
+class TextContent extends AbstractContent implements TextContentInterface
 {
 
 	/**
