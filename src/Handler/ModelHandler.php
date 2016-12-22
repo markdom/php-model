@@ -435,4 +435,34 @@ class ModelHandler implements HandlerInterface
 		return $this->markdomDocument;
 	}
 
+	/**
+	 * Convenienance method to allow access to the listBlockStack by child classes
+	 *
+	 * @return Stack
+	 */
+	public function getListBlockStack()
+	{
+		return $this->listBlockStack;
+	}
+
+	/**
+	 * Convenienance method to allow access to the listBlockStack by child classes
+	 *
+	 * @return Stack
+	 */
+	public function getBlockParentStack()
+	{
+		return $this->blockParentStack;
+	}
+
+	/**
+	 * Convenienance method to allow access to the listBlockStack by child classes
+	 *
+	 * @return Stack
+	 */
+	public function getContentParentStack()
+	{
+		return $this->contentParentStack;
+	}
+
 }
