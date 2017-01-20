@@ -1,6 +1,16 @@
 engines:
   duplication:
     enabled: true
+    exclude_fingerprints:
+    # Exclude some checks on BlockSequence
+    - 7d905e08763fb518ece6adadf60e23ff
+    - b24d55a0ad9cea16de6cf4d7ad0da559
+    # Exclude some checks on ContentSequence
+    - e7015afc57389884f03f9b50e52f060c
+    - 822db06eb69264b7535638ebbf061583
+    # Exclude some checks on ListItemSequence
+    - 46e0ae8f9c1aaf119aa8f16961f40538
+    - 37719c55909a3e3a6a302e66dbf845db
     config:
       languages:
       - ruby
@@ -15,6 +25,8 @@ engines:
       CleanCode/ElseExpression:
         enabled: false
       Design/TooManyPublicMethods:
+        enabled: false
+      UnusedFormalParameter:
         enabled: false
 ratings:
   paths:
