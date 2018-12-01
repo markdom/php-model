@@ -65,7 +65,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onDocumentBegin()
+	public function onDocumentBegin(): void
 	{
 		$this->markdomDocument = new Document();
 		$this->blockParentStack->push($this->markdomDocument);
@@ -74,7 +74,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onDocumentEnd()
+	public function onDocumentEnd(): void
 	{
 		$this->blockParentStack->pop();
 	}
@@ -82,7 +82,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onBlocksBegin()
+	public function onBlocksBegin(): void
 	{
 	}
 
@@ -90,7 +90,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $type
 	 * @return void
 	 */
-	public function onBlockBegin($type)
+	public function onBlockBegin(string $type): void
 	{
 	}
 
@@ -99,7 +99,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $hint
 	 * @return void
 	 */
-	public function onCodeBlock($code, $hint = null)
+	public function onCodeBlock(string $code, ?string $hint = null): void
 	{
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
@@ -110,7 +110,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $comment
 	 * @return void
 	 */
-	public function onCommentBlock($comment)
+	public function onCommentBlock(string $comment): void
 	{
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
@@ -120,7 +120,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onDivisionBlock()
+	public function onDivisionBlock(): void
 	{
 		/** @var BlockParentInterface $parent */
 		$parent = $this->blockParentStack->get();
@@ -131,7 +131,7 @@ class ModelHandler implements HandlerInterface
 	 * @param int $level
 	 * @return void
 	 */
-	public function onHeadingBlockBegin($level)
+	public function onHeadingBlockBegin(int $level): void
 	{
 		$heading = new HeadingBlock($level);
 		/** @var BlockParentInterface $parent */
@@ -144,7 +144,7 @@ class ModelHandler implements HandlerInterface
 	 * @param int $level
 	 * @return void
 	 */
-	public function onHeadingBlockEnd($level)
+	public function onHeadingBlockEnd(int $level): void
 	{
 		$this->contentParentStack->pop();
 	}
@@ -152,7 +152,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onUnorderedListBlockBegin()
+	public function onUnorderedListBlockBegin(): void
 	{
 		$list = new UnorderedListBlock();
 		/** @var BlockParentInterface $parent */
@@ -165,7 +165,7 @@ class ModelHandler implements HandlerInterface
 	 * @param int $startIndex
 	 * @return void
 	 */
-	public function onOrderedListBlockBegin($startIndex)
+	public function onOrderedListBlockBegin(int $startIndex): void
 	{
 		$list = new OrderedListBlock($startIndex);
 		/** @var BlockParentInterface $parent */
@@ -177,14 +177,14 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onListItemsBegin()
+	public function onListItemsBegin(): void
 	{
 	}
 
 	/**
 	 * @return void
 	 */
-	public function onListItemBegin()
+	public function onListItemBegin(): void
 	{
 		$listItem = new ListItem();
 		/** @var ListBlockInterface $parent */
@@ -196,7 +196,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onListItemEnd()
+	public function onListItemEnd(): void
 	{
 		$this->blockParentStack->pop();
 	}
@@ -204,21 +204,21 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onNextListItem()
+	public function onNextListItem(): void
 	{
 	}
 
 	/**
 	 * @return void
 	 */
-	public function onListItemsEnd()
+	public function onListItemsEnd(): void
 	{
 	}
 
 	/**
 	 * @return void
 	 */
-	public function onUnorderedListBlockEnd()
+	public function onUnorderedListBlockEnd(): void
 	{
 		$this->listBlockStack->pop();
 	}
@@ -227,7 +227,7 @@ class ModelHandler implements HandlerInterface
 	 * @param int
 	 * @return void
 	 */
-	public function onOrderedListBlockEnd($startIndex)
+	public function onOrderedListBlockEnd(int $startIndex): void
 	{
 		$this->listBlockStack->pop();
 	}
@@ -235,7 +235,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onParagraphBlockBegin()
+	public function onParagraphBlockBegin(): void
 	{
 		$paragraph = new ParagraphBlock();
 		/** @var BlockParentInterface $parent */
@@ -247,7 +247,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onParagraphBlockEnd()
+	public function onParagraphBlockEnd(): void
 	{
 		$this->contentParentStack->pop();
 	}
@@ -255,7 +255,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onQuoteBlockBegin()
+	public function onQuoteBlockBegin(): void
 	{
 		$quote = new QuoteBlock();
 		/** @var BlockParentInterface $parent */
@@ -267,7 +267,7 @@ class ModelHandler implements HandlerInterface
 	/**
 	 * @return void
 	 */
-	public function onQuoteBlockEnd()
+	public function onQuoteBlockEnd(): void
 	{
 		$this->blockParentStack->pop();
 	}
@@ -276,28 +276,28 @@ class ModelHandler implements HandlerInterface
 	 * @param string $type
 	 * @return void
 	 */
-	public function onBlockEnd($type)
+	public function onBlockEnd(string $type): void
 	{
 	}
 
 	/**
 	 * @return void
 	 */
-	public function onNextBlock()
+	public function onNextBlock(): void
 	{
 	}
 
 	/**
 	 * @return void
 	 */
-	public function onBlocksEnd()
+	public function onBlocksEnd(): void
 	{
 	}
 
 	/**
 	 * @return void
 	 */
-	public function onContentsBegin()
+	public function onContentsBegin(): void
 	{
 	}
 
@@ -305,7 +305,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $type
 	 * @return void
 	 */
-	public function onContentBegin($type)
+	public function onContentBegin(string $type): void
 	{
 	}
 
@@ -313,7 +313,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $code
 	 * @return void
 	 */
-	public function onCodeContent($code)
+	public function onCodeContent(string $code): void
 	{
 		$code = new CodeContent($code);
 		/** @var ContentParentInterface $parent */
@@ -325,7 +325,7 @@ class ModelHandler implements HandlerInterface
 	 * @param int $level
 	 * @return void
 	 */
-	public function onEmphasisContentBegin($level)
+	public function onEmphasisContentBegin(int $level): void
 	{
 		$emphasis = new EmphasisContent($level);
 		/** @var ContentParentInterface $parent */
@@ -338,7 +338,7 @@ class ModelHandler implements HandlerInterface
 	 * @param int $level
 	 * @return void
 	 */
-	public function onEmphasisContentEnd($level)
+	public function onEmphasisContentEnd(int $level): void
 	{
 		$this->contentParentStack->pop();
 	}
@@ -349,7 +349,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $alternative
 	 * @return void
 	 */
-	public function onImageContent($uri, $title = null, $alternative = null)
+	public function onImageContent(string $uri, ?string $title = null, ?string $alternative = null): void
 	{
 		$image = new ImageContent($uri, $title, $alternative);
 		/** @var ContentParentInterface $parent */
@@ -361,7 +361,7 @@ class ModelHandler implements HandlerInterface
 	 * @param bool $hard
 	 * @return void
 	 */
-	public function onLineBreakContent($hard)
+	public function onLineBreakContent(bool $hard): void
 	{
 		$linebreak = new LinebreakContent($hard);
 		/** @var ContentParentInterface $parent */
@@ -374,7 +374,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $title
 	 * @return void
 	 */
-	public function onLinkContentBegin($uri, $title = null)
+	public function onLinkContentBegin(string $uri, ?string $title = null): void
 	{
 		$link = new LinkContent($uri, $title);
 		/** @var ContentParentInterface $parent */
@@ -388,7 +388,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $title
 	 * @return void
 	 */
-	public function onLinkContentEnd($uri, $title = null)
+	public function onLinkContentEnd(string $uri, ?string $title = null): void
 	{
 		$this->contentParentStack->pop();
 	}
@@ -397,7 +397,7 @@ class ModelHandler implements HandlerInterface
 	 * @param string $text
 	 * @return void
 	 */
-	public function onTextContent($text)
+	public function onTextContent(string $text): void
 	{
 		$text = new TextContent($text);
 		/** @var ContentParentInterface $parent */
@@ -409,28 +409,28 @@ class ModelHandler implements HandlerInterface
 	 * @param string $type
 	 * @return void
 	 */
-	public function onContentEnd($type)
+	public function onContentEnd(string $type): void
 	{
 	}
 
 	/**
 	 * @return void
 	 */
-	public function onNextContent()
+	public function onNextContent(): void
 	{
 	}
 
 	/**
 	 * @return void
 	 */
-	public function onContentsEnd()
+	public function onContentsEnd(): void
 	{
 	}
 
 	/**
 	 * @return Document
 	 */
-	public function getResult()
+	public function getResult(): Document
 	{
 		return $this->markdomDocument;
 	}
@@ -440,7 +440,7 @@ class ModelHandler implements HandlerInterface
 	 *
 	 * @return Stack
 	 */
-	public function getListBlockStack()
+	public function getListBlockStack(): Stack
 	{
 		return $this->listBlockStack;
 	}
@@ -450,7 +450,7 @@ class ModelHandler implements HandlerInterface
 	 *
 	 * @return Stack
 	 */
-	public function getBlockParentStack()
+	public function getBlockParentStack(): Stack
 	{
 		return $this->blockParentStack;
 	}
@@ -460,7 +460,7 @@ class ModelHandler implements HandlerInterface
 	 *
 	 * @return Stack
 	 */
-	public function getContentParentStack()
+	public function getContentParentStack(): Stack
 	{
 		return $this->contentParentStack;
 	}

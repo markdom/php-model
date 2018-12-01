@@ -23,7 +23,7 @@ class CodeContent extends AbstractContent implements CodeContentInterface
 	 *
 	 * @param string $code
 	 */
-	public function __construct($code)
+	public function __construct(string $code)
 	{
 		$this->code = $code;
 	}
@@ -31,7 +31,7 @@ class CodeContent extends AbstractContent implements CodeContentInterface
 	/**
 	 * @return string
 	 */
-	public function getCode()
+	public function getCode(): string
 	{
 		return $this->code;
 	}
@@ -40,7 +40,7 @@ class CodeContent extends AbstractContent implements CodeContentInterface
 	 * @param string $code
 	 * @return $this
 	 */
-	public function setCode($code)
+	public function setCode(string $code)
 	{
 		$this->code = $code;
 		return $this;
@@ -49,7 +49,7 @@ class CodeContent extends AbstractContent implements CodeContentInterface
 	/**
 	 * @return string
 	 */
-	public function getContentType()
+	public function getContentType(): string
 	{
 		return self::CONTENT_TYPE_CODE;
 	}
@@ -57,7 +57,7 @@ class CodeContent extends AbstractContent implements CodeContentInterface
 	/**
 	 * @param HandlerInterface $markdomHandler
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onContentBegin($this->getContentType());
 		$markdomHandler->onCodeContent($this->getCode());

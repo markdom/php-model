@@ -19,7 +19,7 @@ final class EmptyCountableIterator implements CountableIteratorInterface
 	 * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
 	 * @return Traversable
 	 */
-	public function getIterator()
+	public function getIterator(): Traversable
 	{
 		return new ListIterator(array());
 	}
@@ -27,7 +27,7 @@ final class EmptyCountableIterator implements CountableIteratorInterface
 	/**
 	 * @return bool
 	 */
-	public function isEmpty()
+	public function isEmpty(): bool
 	{
 		return true;
 	}
@@ -38,7 +38,7 @@ final class EmptyCountableIterator implements CountableIteratorInterface
 	 * @link http://php.net/manual/en/countable.count.php
 	 * @return int
 	 */
-	public function count()
+	public function count(): int
 	{
 		return 0;
 	}

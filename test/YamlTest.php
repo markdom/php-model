@@ -2,19 +2,24 @@
 
 namespace Markdom\Test;
 
+use Markdom\Dispatcher\Exception\DispatcherException;
 use Markdom\Dispatcher\JsonDispatcher;
 use Markdom\Handler\YamlHandler;
 use Markdom\Model\Handler\ModelHandler;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class YamlTest
  *
  * @package Markdom\Test
  */
-class YamlTest extends \PHPUnit_Framework_TestCase
+class YamlTest extends TestCase
 {
 
-	public function testParseHandle()
+	/**
+	 * @throws DispatcherException
+	 */
+	public function testParseHandle(): void
 	{
 		// Dispatch a JSON file as Markdom Document
 		$handler = new ModelHandler();
@@ -29,7 +34,7 @@ class YamlTest extends \PHPUnit_Framework_TestCase
 			->setWordWrap(true);
 		$document->dispatchTo($handler);
 		$yamlString = $handler->getResult();
-		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.yaml'), $yamlString);
+		$this->assertStringEqualsFile(__DIR__ . '/test-data.yaml', $yamlString);
 	}
 
 }

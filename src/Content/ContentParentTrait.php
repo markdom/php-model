@@ -21,7 +21,7 @@ trait ContentParentTrait
 	/**
 	 * @return ContentSequenceInterface
 	 */
-	final public function getContents()
+	final public function getContents(): ContentSequenceInterface
 	{
 		if (is_null($this->contents)) {
 			/** @noinspection PhpParamsInspection */
@@ -33,7 +33,7 @@ trait ContentParentTrait
 	/**
 	 * @return ContentSequenceInterface
 	 */
-	final public function getChildren()
+	final public function getChildren(): ContentSequenceInterface
 	{
 		return $this->getContents();
 	}

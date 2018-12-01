@@ -47,7 +47,7 @@ final class ListIterator implements \Iterator
 	 * @link http://php.net/manual/en/iterator.next.php
 	 * @return void
 	 */
-	public function next()
+	public function next(): void
 	{
 		$this->cursor++;
 	}
@@ -58,7 +58,7 @@ final class ListIterator implements \Iterator
 	 * @link http://php.net/manual/en/iterator.key.php
 	 * @return int
 	 */
-	public function key()
+	public function key(): int
 	{
 		return $this->cursor;
 	}
@@ -69,9 +69,9 @@ final class ListIterator implements \Iterator
 	 * @link http://php.net/manual/en/iterator.valid.php
 	 * @return bool
 	 */
-	public function valid()
+	public function valid(): bool
 	{
-		return isset($this->collection[$this->cursor]);
+		return array_key_exists($this->cursor, $this->collection);
 	}
 
 	/**
@@ -80,7 +80,7 @@ final class ListIterator implements \Iterator
 	 * @link http://php.net/manual/en/iterator.rewind.php
 	 * @return void
 	 */
-	public function rewind()
+	public function rewind(): void
 	{
 		$this->cursor = 0;
 	}

@@ -5,16 +5,17 @@ namespace Markdom\Test;
 use Markdom\Dispatcher\CommonmarkDispatcher;
 use Markdom\Handler\CommonmarkHandler;
 use Markdom\Model\Handler\ModelHandler;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class CommonmarkTest
  *
  * @package Markdom\Test
  */
-class CommonmarkTest extends \PHPUnit_Framework_TestCase
+class CommonmarkTest extends TestCase
 {
 
-	public function testParseHandle()
+	public function testParseHandle(): void
 	{
 		// Dispatch a Commonmark file as Markdom Document
 		$handler = new ModelHandler();
@@ -26,7 +27,7 @@ class CommonmarkTest extends \PHPUnit_Framework_TestCase
 		$handler = new CommonmarkHandler();
 		$document->dispatchTo($handler);
 		$commonmarkString = $handler->getResult();
-		$this->assertEquals(file_get_contents(__DIR__ . '/test-result.md'), $commonmarkString);
+		$this->assertStringEqualsFile(__DIR__ . '/test-result.md', $commonmarkString);
 	}
 
 }

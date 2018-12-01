@@ -21,7 +21,7 @@ trait BlockParentTrait
 	/**
 	 * @return BlockSequenceInterface
 	 */
-	final public function getBlocks()
+	final public function getBlocks(): BlockSequenceInterface
 	{
 		if (is_null($this->blocks)) {
 			/** @noinspection PhpParamsInspection */
@@ -33,7 +33,7 @@ trait BlockParentTrait
 	/**
 	 * @return BlockSequenceInterface
 	 */
-	final public function getChildren()
+	final public function getChildren(): BlockSequenceInterface
 	{
 		return $this->getBlocks();
 	}

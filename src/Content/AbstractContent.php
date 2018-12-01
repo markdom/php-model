@@ -28,7 +28,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	/**
 	 * @return string
 	 */
-	final public function getNodeType()
+	final public function getNodeType(): string
 	{
 		return NodeInterface::NODE_TYPE_CONTENT;
 	}
@@ -36,7 +36,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	/**
 	 * @return int
 	 */
-	final public function getIndex()
+	final public function getIndex(): int
 	{
 		return $this->getParent()->getContents()->indexOf($this);
 	}
@@ -44,7 +44,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	/**
 	 * @return ContentParentInterface
 	 */
-	final public function getParent()
+	final public function getParent(): ContentParentInterface
 	{
 		return $this->parent;
 	}
@@ -52,7 +52,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	/**
 	 * @return bool
 	 */
-	final public function hasParent()
+	final public function hasParent(): bool
 	{
 		return !is_null($this->getParent());
 	}
@@ -60,7 +60,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	/**
 	 * @return BlockInterface
 	 */
-	final public function getBlock()
+	final public function getBlock(): BlockInterface
 	{
 		return $this->getParent()->getBlock();
 	}
@@ -68,7 +68,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	/**
 	 * @return DocumentInterface
 	 */
-	final public function getDocument()
+	final public function getDocument(): DocumentInterface
 	{
 		return $this->getParent()->getDocument();
 	}
@@ -76,7 +76,7 @@ abstract class AbstractContent extends AbstractNode implements ContentInterface
 	/**
 	 * @return CountableIteratorInterface
 	 */
-	public function getChildren()
+	public function getChildren(): CountableIteratorInterface
 	{
 		return new EmptyCountableIterator();
 	}

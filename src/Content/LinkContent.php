@@ -31,7 +31,7 @@ class LinkContent extends AbstractContent implements LinkContentInterface
 	 * @param string $uri
 	 * @param string $title
 	 */
-	public function __construct($uri, $title = null)
+	public function __construct(string $uri, ?string $title = null)
 	{
 		$this->uri = $uri;
 		$this->title = $title;
@@ -40,7 +40,7 @@ class LinkContent extends AbstractContent implements LinkContentInterface
 	/**
 	 * @return string
 	 */
-	public function getUri()
+	public function getUri(): string
 	{
 		return $this->uri;
 	}
@@ -49,7 +49,7 @@ class LinkContent extends AbstractContent implements LinkContentInterface
 	 * @param string $uri
 	 * @return $this
 	 */
-	public function setUri($uri)
+	public function setUri(string $uri)
 	{
 		$this->uri = $uri;
 		return $this;
@@ -58,7 +58,7 @@ class LinkContent extends AbstractContent implements LinkContentInterface
 	/**
 	 * @return string
 	 */
-	public function getTitle()
+	public function getTitle(): ?string
 	{
 		return $this->title;
 	}
@@ -67,7 +67,7 @@ class LinkContent extends AbstractContent implements LinkContentInterface
 	 * @param string $title
 	 * @return $this
 	 */
-	public function setTitle($title)
+	public function setTitle(string $title)
 	{
 		$this->title = $title;
 		return $this;
@@ -76,7 +76,7 @@ class LinkContent extends AbstractContent implements LinkContentInterface
 	/**
 	 * @return string
 	 */
-	public function getContentParentType()
+	public function getContentParentType(): string
 	{
 		return self::CONTENT_PARENT_TYPE_LINK;
 	}
@@ -84,7 +84,7 @@ class LinkContent extends AbstractContent implements LinkContentInterface
 	/**
 	 * @return string
 	 */
-	public function getContentType()
+	public function getContentType(): string
 	{
 		return self::CONTENT_TYPE_LINK;
 	}
@@ -92,7 +92,7 @@ class LinkContent extends AbstractContent implements LinkContentInterface
 	/**
 	 * @param HandlerInterface $markdomHandler
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onContentBegin($this->getContentType());
 		$markdomHandler->onLinkContentBegin($this->getUri(), $this->getTitle());

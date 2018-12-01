@@ -29,7 +29,7 @@ class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	 * @param string $code
 	 * @param string $hint
 	 */
-	public function __construct($code, $hint = null)
+	public function __construct(string $code, ?string $hint = null)
 	{
 		$this->code = $code;
 		$this->hint = $hint;
@@ -38,7 +38,7 @@ class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getCode()
+	public function getCode(): string
 	{
 		return $this->code;
 	}
@@ -47,7 +47,7 @@ class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	 * @param string $code
 	 * @return $this
 	 */
-	public function setCode($code)
+	public function setCode(string $code)
 	{
 		$this->code = $code;
 		return $this;
@@ -56,7 +56,7 @@ class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getHint()
+	public function getHint(): ?string
 	{
 		return $this->hint;
 	}
@@ -65,7 +65,7 @@ class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	 * @param string $hint
 	 * @return $this
 	 */
-	public function setHint($hint)
+	public function setHint(string $hint)
 	{
 		$this->hint = $hint;
 		return $this;
@@ -74,7 +74,7 @@ class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockType()
+	public function getBlockType(): string
 	{
 		return self::BLOCK_TYPE_CODE;
 	}
@@ -83,7 +83,7 @@ class CodeBlock extends AbstractBlock implements CodeBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onCodeBlock($this->getCode(), $this->getHint());

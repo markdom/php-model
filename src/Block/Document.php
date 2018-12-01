@@ -18,9 +18,9 @@ class Document extends AbstractNode implements DocumentInterface
 	use BlockParentTrait;
 
 	/**
-	 * @return null
+	 * @return int
 	 */
-	public function getIndex()
+	public function getIndex(): ?int
 	{
 		return null;
 	}
@@ -28,7 +28,7 @@ class Document extends AbstractNode implements DocumentInterface
 	/**
 	 * @return string
 	 */
-	public function getNodeType()
+	public function getNodeType(): string
 	{
 		return NodeInterface::NODE_TYPE_DOCUMENT;
 	}
@@ -36,7 +36,7 @@ class Document extends AbstractNode implements DocumentInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockParentType()
+	public function getBlockParentType(): string
 	{
 		return self::BLOCK_PARENT_TYPE_DOCUMENT;
 	}
@@ -44,7 +44,7 @@ class Document extends AbstractNode implements DocumentInterface
 	/**
 	 * @return NodeInterface
 	 */
-	public function getParent()
+	public function getParent(): ?NodeInterface
 	{
 		return null;
 	}
@@ -52,7 +52,7 @@ class Document extends AbstractNode implements DocumentInterface
 	/**
 	 * @return bool
 	 */
-	public function hasParent()
+	public function hasParent(): bool
 	{
 		return false;
 	}
@@ -80,7 +80,7 @@ class Document extends AbstractNode implements DocumentInterface
 	/**
 	 * @return bool
 	 */
-	public function isReusable()
+	public function isReusable(): bool
 	{
 		return true;
 	}
@@ -88,7 +88,7 @@ class Document extends AbstractNode implements DocumentInterface
 	/**
 	 * @return DocumentInterface
 	 */
-	public function getDocument()
+	public function getDocument(): DocumentInterface
 	{
 		return $this;
 	}

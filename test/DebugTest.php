@@ -2,19 +2,24 @@
 
 namespace Markdom\Test;
 
+use Markdom\Dispatcher\Exception\DispatcherException;
 use Markdom\Dispatcher\JsonDispatcher;
 use Markdom\Handler\DebugHandler;
 use Markdom\Model\Handler\ModelHandler;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class DebugTest
  *
  * @package Markdom\Test
  */
-class DebugTest extends \PHPUnit_Framework_TestCase
+class DebugTest extends TestCase
 {
 
-	public function testParseHandle()
+	/**
+	 * @throws DispatcherException
+	 */
+	public function testParseHandle(): void
 	{
 		// Dispatch a JSON file as Markdom Document
 		$handler = new ModelHandler();
@@ -26,7 +31,7 @@ class DebugTest extends \PHPUnit_Framework_TestCase
 		$handler = new DebugHandler();
 		$document->dispatchTo($handler);
 		$debugString = $handler->getResult();
-		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.debug.txt'), $debugString);
+		$this->assertStringEqualsFile(__DIR__ . '/test-data.debug.txt', $debugString);
 	}
 
 }

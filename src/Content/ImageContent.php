@@ -35,7 +35,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	 * @param string $title
 	 * @param string $alternative
 	 */
-	public function __construct($uri, $title = null, $alternative = null)
+	public function __construct(string $uri, ?string $title = null, ?string $alternative = null)
 	{
 		$this->uri = $uri;
 		$this->title = $title;
@@ -45,7 +45,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	/**
 	 * @return string
 	 */
-	public function getUri()
+	public function getUri(): string
 	{
 		return $this->uri;
 	}
@@ -54,7 +54,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	 * @param string $uri
 	 * @return $this
 	 */
-	public function setUri($uri)
+	public function setUri(string $uri)
 	{
 		$this->uri = $uri;
 		return $this;
@@ -63,7 +63,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	/**
 	 * @return string
 	 */
-	public function getTitle()
+	public function getTitle(): ?string
 	{
 		return $this->title;
 	}
@@ -72,7 +72,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	 * @param string $title
 	 * @return $this
 	 */
-	public function setTitle($title)
+	public function setTitle(string $title)
 	{
 		$this->title = $title;
 		return $this;
@@ -81,7 +81,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	/**
 	 * @return string
 	 */
-	public function getAlternative()
+	public function getAlternative(): ?string
 	{
 		return $this->alternative;
 	}
@@ -90,7 +90,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	 * @param string $alternative
 	 * @return $this
 	 */
-	public function setAlternative($alternative)
+	public function setAlternative(string $alternative)
 	{
 		$this->alternative = $alternative;
 		return $this;
@@ -99,7 +99,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	/**
 	 * @return string
 	 */
-	public function getContentType()
+	public function getContentType(): string
 	{
 		return self::CONTENT_TYPE_IMAGE;
 	}
@@ -107,7 +107,7 @@ class ImageContent extends AbstractContent implements ImageContentInterface
 	/**
 	 * @param HandlerInterface $markdomHandler
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onContentBegin($this->getContentType());
 		$markdomHandler->onImageContent($this->getUri(), $this->getTitle(), $this->getAlternative());

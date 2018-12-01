@@ -28,7 +28,7 @@ class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockParentType()
+	public function getBlockParentType(): string
 	{
 		return self::BLOCK_PARENT_TYPE_LIST_ITEM;
 	}
@@ -36,7 +36,7 @@ class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return string
 	 */
-	public function getNodeType()
+	public function getNodeType(): string
 	{
 		return NodeInterface::NODE_TYPE_LIST_ITEM;
 	}
@@ -44,7 +44,7 @@ class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return int
 	 */
-	public function getIndex()
+	public function getIndex(): int
 	{
 		return $this->getParent()->getItems()->indexOf($this);
 	}
@@ -52,7 +52,7 @@ class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return ListBlockInterface
 	 */
-	public function getParent()
+	public function getParent(): ListBlockInterface
 	{
 		return $this->listBlock;
 	}
@@ -60,7 +60,7 @@ class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return bool
 	 */
-	public function hasParent()
+	public function hasParent(): bool
 	{
 		return !is_null($this->getParent());
 	}
@@ -68,7 +68,7 @@ class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @return DocumentInterface
 	 */
-	public function getDocument()
+	public function getDocument(): DocumentInterface
 	{
 		return $this->getParent()->getDocument();
 	}
@@ -103,7 +103,7 @@ class ListItem extends AbstractNode implements ListItemInterface
 	/**
 	 * @param HandlerInterface $markdomHandler
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onListItemBegin();
 		$markdomHandler->onBlocksBegin();

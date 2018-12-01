@@ -23,7 +23,7 @@ class CommentBlock extends AbstractBlock implements CommentBlockInterface
 	 *
 	 * @param $comment
 	 */
-	public function __construct($comment)
+	public function __construct(string $comment)
 	{
 		$this->comment = $comment;
 	}
@@ -31,7 +31,7 @@ class CommentBlock extends AbstractBlock implements CommentBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getComment()
+	public function getComment(): string
 	{
 		return $this->comment;
 	}
@@ -40,7 +40,7 @@ class CommentBlock extends AbstractBlock implements CommentBlockInterface
 	 * @param string $comment
 	 * @return $this
 	 */
-	public function setComment($comment)
+	public function setComment(string $comment)
 	{
 		$this->comment = $comment;
 		return $this;
@@ -49,7 +49,7 @@ class CommentBlock extends AbstractBlock implements CommentBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockType()
+	public function getBlockType(): string
 	{
 		return self::BLOCK_TYPE_COMMENT;
 	}
@@ -58,7 +58,7 @@ class CommentBlock extends AbstractBlock implements CommentBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onCommentBlock($this->getComment());

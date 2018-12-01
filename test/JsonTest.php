@@ -2,19 +2,24 @@
 
 namespace Markdom\Test;
 
+use Markdom\Dispatcher\Exception\DispatcherException;
 use Markdom\Dispatcher\JsonDispatcher;
 use Markdom\Handler\JsonHandler;
 use Markdom\Model\Handler\ModelHandler;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class JsonTest
  *
  * @package Markdom\Test
  */
-class JsonTest extends \PHPUnit_Framework_TestCase
+class JsonTest extends TestCase
 {
 
-	public function testParseHandle()
+	/**
+	 * @throws DispatcherException
+	 */
+	public function testParseHandle(): void
 	{
 		// Dispatch a JSON file as Markdom Document
 		$handler = new ModelHandler();
@@ -29,7 +34,7 @@ class JsonTest extends \PHPUnit_Framework_TestCase
 			->setEscapeUnicode(true);
 		$document->dispatchTo($handler);
 		$jsonString = $handler->getResult();
-		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.json'), $jsonString);
+		$this->assertStringEqualsFile(__DIR__ . '/test-data.json', $jsonString);
 	}
 
 }

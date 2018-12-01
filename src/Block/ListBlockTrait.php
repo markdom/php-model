@@ -21,7 +21,7 @@ trait ListBlockTrait
 	/**
 	 * @return ListItemSequenceInterface
 	 */
-	final public function getItems()
+	final public function getItems(): ListItemSequenceInterface
 	{
 		if (is_null($this->listItems)) {
 			/** @noinspection PhpParamsInspection */

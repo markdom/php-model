@@ -25,7 +25,7 @@ class OrderedListBlock extends AbstractBlock implements OrderedListBlockInterfac
 	 *
 	 * @param int $startIndex
 	 */
-	public function __construct($startIndex)
+	public function __construct(int $startIndex)
 	{
 		$this->startIndex = $startIndex;
 	}
@@ -33,7 +33,7 @@ class OrderedListBlock extends AbstractBlock implements OrderedListBlockInterfac
 	/**
 	 * @return string
 	 */
-	public function getListBlockType()
+	public function getListBlockType(): string
 	{
 		return self::LIST_BLOCK_TYPE_ORDERED_LIST;
 	}
@@ -41,7 +41,7 @@ class OrderedListBlock extends AbstractBlock implements OrderedListBlockInterfac
 	/**
 	 * @return string
 	 */
-	public function getBlockType()
+	public function getBlockType(): string
 	{
 		return self::BLOCK_TYPE_ORDERED_LIST;
 	}
@@ -49,7 +49,7 @@ class OrderedListBlock extends AbstractBlock implements OrderedListBlockInterfac
 	/**
 	 * @return int
 	 */
-	public function getStartIndex()
+	public function getStartIndex(): int
 	{
 		return $this->startIndex;
 	}
@@ -58,7 +58,7 @@ class OrderedListBlock extends AbstractBlock implements OrderedListBlockInterfac
 	 * @param int $startIndex
 	 * @return $this
 	 */
-	public function setStartIndex($startIndex)
+	public function setStartIndex(int $startIndex)
 	{
 		$this->startIndex = $startIndex;
 		return $this;
@@ -68,7 +68,7 @@ class OrderedListBlock extends AbstractBlock implements OrderedListBlockInterfac
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onOrderedListBlockBegin($this->getStartIndex());

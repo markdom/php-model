@@ -40,7 +40,7 @@ final class ContentSequence implements ContentSequenceInterface
 	/**
 	 * @return ContentParentInterface
 	 */
-	public function getParent()
+	public function getParent(): ContentParentInterface
 	{
 		return $this->parent;
 	}
@@ -48,7 +48,7 @@ final class ContentSequence implements ContentSequenceInterface
 	/**
 	 * @return int
 	 */
-	public function size()
+	public function size(): int
 	{
 		return count($this->contents);
 	}
@@ -56,7 +56,7 @@ final class ContentSequence implements ContentSequenceInterface
 	/**
 	 * @return bool
 	 */
-	public function isEmpty()
+	public function isEmpty(): bool
 	{
 		return count($this->contents) === 0;
 	}
@@ -65,7 +65,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @param ContentInterface $content
 	 * @return bool
 	 */
-	public function contains(ContentInterface $content)
+	public function contains(ContentInterface $content): bool
 	{
 		$index = array_search($content, $this->contents, true);
 		return $index !== false;
@@ -76,7 +76,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @return bool
 	 * @throws MarkdomModelException
 	 */
-	public function containsAll(array $contents)
+	public function containsAll(array $contents): bool
 	{
 		foreach ($contents as $content) {
 			if (!$contents instanceof ContentInterface) {
@@ -93,16 +93,18 @@ final class ContentSequence implements ContentSequenceInterface
 
 	/**
 	 * @return ContentInterface
+	 * @throws MarkdomModelException
 	 */
-	public function first()
+	public function first(): ContentInterface
 	{
 		return $this->get(0);
 	}
 
 	/**
 	 * @return ContentInterface
+	 * @throws MarkdomModelException
 	 */
-	public function last()
+	public function last(): ContentInterface
 	{
 		return $this->get($this->size() - 1);
 	}
@@ -112,9 +114,9 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @return ContentInterface
 	 * @throws MarkdomModelException
 	 */
-	public function get($index)
+	public function get(int $index): ContentInterface
 	{
-		if (!isset($this->contents[$index])) {
+		if (!array_key_exists($index, $this->contents)) {
 			throw new MarkdomModelException('Content not found');
 		}
 		return $this->contents[$index];
@@ -125,7 +127,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @return int
 	 * @throws MarkdomModelException
 	 */
-	public function indexOf(ContentInterface $content)
+	public function indexOf(ContentInterface $content): int
 	{
 		$index = array_search($content, $this->contents, true);
 		if ($index === false) {
@@ -137,8 +139,9 @@ final class ContentSequence implements ContentSequenceInterface
 	/**
 	 * @param ContentInterface $content
 	 * @return bool
+	 * @throws MarkdomModelException
 	 */
-	public function isFirst(ContentInterface $content)
+	public function isFirst(ContentInterface $content): bool
 	{
 		return $this->indexOf($content) === 0;
 	}
@@ -146,8 +149,9 @@ final class ContentSequence implements ContentSequenceInterface
 	/**
 	 * @param ContentInterface $content
 	 * @return bool
+	 * @throws MarkdomModelException
 	 */
-	public function isLast(ContentInterface $content)
+	public function isLast(ContentInterface $content): bool
 	{
 		return $this->indexOf($content) === $this->size() - 1;
 	}
@@ -219,7 +223,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @param int $index
 	 * @return $this
 	 */
-	public function insert(ContentInterface $content, $index)
+	public function insert(ContentInterface $content, int $index)
 	{
 		array_splice($this->contents, $index, 0, array($content));
 		$content->onAttach($this->getParent());
@@ -232,7 +236,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @return $this
 	 * @throws MarkdomModelException
 	 */
-	public function insertAll(array $contents, $index)
+	public function insertAll(array $contents, int $index)
 	{
 		foreach ($contents as $content) {
 			if (!$contents instanceof ContentInterface) {
@@ -251,6 +255,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @param ContentInterface $content
 	 * @param ContentInterface $referenceContent
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAfter(ContentInterface $content, ContentInterface $referenceContent)
 	{
@@ -262,6 +267,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @param ContentInterface[] $contents
 	 * @param ContentInterface $referenceContent
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAllAfter(array $contents, ContentInterface $referenceContent)
 	{
@@ -273,6 +279,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @param ContentInterface $content
 	 * @param ContentInterface $referenceContent
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertBefore(ContentInterface $content, ContentInterface $referenceContent)
 	{
@@ -284,6 +291,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @param ContentInterface[] $contents
 	 * @param ContentInterface $referenceContent
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAllBefore(array $contents, ContentInterface $referenceContent)
 	{
@@ -295,6 +303,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @param ContentInterface $content
 	 * @param ContentInterface $replacedContent
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function replaceItem(ContentInterface $content, ContentInterface $replacedContent)
 	{
@@ -311,8 +320,9 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @param ContentInterface $content
 	 * @param int $index
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
-	public function replace(ContentInterface $content, $index)
+	public function replace(ContentInterface $content, int $index)
 	{
 		$replacedBlock = $this->get($index);
 		if (is_null($replacedBlock)) {
@@ -328,7 +338,7 @@ final class ContentSequence implements ContentSequenceInterface
 	/**
 	 * @return ContentInterface
 	 */
-	public function removeFirst()
+	public function removeFirst(): ContentInterface
 	{
 		$removedBlock = array_shift($this->contents);
 		$removedBlock->onDetach();
@@ -338,7 +348,7 @@ final class ContentSequence implements ContentSequenceInterface
 	/**
 	 * @return ContentInterface
 	 */
-	public function removeLast()
+	public function removeLast(): ContentInterface
 	{
 		$removedBlock = array_pop($this->contents);
 		$removedBlock->onDetach();
@@ -367,7 +377,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @return ContentInterface
 	 * @throws MarkdomModelException
 	 */
-	public function removeItem(ContentInterface $content)
+	public function removeItem(ContentInterface $content): ContentInterface
 	{
 		$index = $this->indexOf($content);
 		$this->remove($index);
@@ -379,7 +389,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @return ContentInterface
 	 * @throws MarkdomModelException
 	 */
-	public function remove($index)
+	public function remove(int $index): ContentInterface
 	{
 		$removedBlock = $this->get($index);
 		if (is_null($removedBlock)) {
@@ -405,7 +415,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
 	 * @return Traversable
 	 */
-	public function getIterator()
+	public function getIterator(): Traversable
 	{
 		return new ListIterator($this->contents);
 	}
@@ -416,7 +426,7 @@ final class ContentSequence implements ContentSequenceInterface
 	 * @link http://php.net/manual/en/countable.count.php
 	 * @return int
 	 */
-	public function count()
+	public function count(): int
 	{
 		return $this->size();
 	}

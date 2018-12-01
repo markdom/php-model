@@ -27,7 +27,7 @@ class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	 *
 	 * @param int $level
 	 */
-	public function __construct($level)
+	public function __construct(int $level)
 	{
 		$this->level = $level;
 	}
@@ -35,7 +35,7 @@ class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	/**
 	 * @return int
 	 */
-	public function getLevel()
+	public function getLevel(): int
 	{
 		return $this->level;
 	}
@@ -44,7 +44,7 @@ class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	 * @param int $level
 	 * @return $this
 	 */
-	public function setLevel($level)
+	public function setLevel(int $level)
 	{
 		$this->level = $level;
 		return $this;
@@ -53,7 +53,7 @@ class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	/**
 	 * @return BlockInterface
 	 */
-	public function getBlock()
+	public function getBlock(): BlockInterface
 	{
 		return $this;
 	}
@@ -61,7 +61,7 @@ class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getContentParentType()
+	public function getContentParentType(): string
 	{
 		return self::CONTENT_PARENT_TYPE_HEADING;
 	}
@@ -69,7 +69,7 @@ class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockType()
+	public function getBlockType(): string
 	{
 		return self::BLOCK_TYPE_HEADING;
 	}
@@ -78,7 +78,7 @@ class HeadingBlock extends AbstractBlock implements HeadingBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onHeadingBlockBegin($this->getLevel());

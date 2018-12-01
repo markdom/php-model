@@ -1,32 +1,33 @@
 {
-  "name": "markdom/model",
-  "type": "library",
-  "description": "Domain model implementations written in PHP",
-  "keywords": [
-    "Markdom",
-    "Model"
-  ],
-  "homepage": "http://markenwerk.net/",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Martin Brecht-Precht",
-      "email": "mb@markenwerk.net",
-      "homepage": "http://markenwerk.net"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Markdom\\Model\\": "src"
-    }
-  },
-  "require": {
-    "php": ">=5.4",
-    "markdom/model-interface": "^1.0.14"
-  },
-  "require-dev": {
-    "markdom/handler": "^1.0.17",
-    "phpunit/phpunit": ">=4.8.26",
-    "codeclimate/php-test-reporter": ">=0.4.1"
-  }
+	"name": "markdom/model",
+	"type": "library",
+	"description": "Domain model implementations written in PHP",
+	"keywords": [
+		"Markdom",
+		"Model"
+	],
+	"homepage": "http://markenwerk.net/",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Martin Brecht-Precht",
+			"email": "mb@markenwerk.net",
+			"homepage": "http://markenwerk.net"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Markdom\\Model\\": "src"
+		}
+	},
+	"require": {
+		"php": "^7.1",
+		"markdom/model-interface": "^1.1.4"
+	},
+	"require-dev": {
+		"ext-dom": "*",
+		"markdom/handler": "^1.1.0",
+		"phpunit/phpunit": "~6.5",
+		"codeclimate/php-test-reporter": ">=0.4.1"
+	}
 }

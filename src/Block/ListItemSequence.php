@@ -40,7 +40,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	/**
 	 * @return ListBlockInterface
 	 */
-	public function getParent()
+	public function getParent(): ListBlockInterface
 	{
 		return $this->parent;
 	}
@@ -48,7 +48,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	/**
 	 * @return int
 	 */
-	public function size()
+	public function size(): int
 	{
 		return count($this->items);
 	}
@@ -56,7 +56,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	/**
 	 * @return bool
 	 */
-	public function isEmpty()
+	public function isEmpty(): bool
 	{
 		return count($this->items) === 0;
 	}
@@ -65,7 +65,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @param ListItemInterface $item
 	 * @return bool
 	 */
-	public function contains(ListItemInterface $item)
+	public function contains(ListItemInterface $item): bool
 	{
 		$index = array_search($item, $this->items, true);
 		return $index !== false;
@@ -76,7 +76,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @return bool
 	 * @throws MarkdomModelException
 	 */
-	public function containsAll(array $items)
+	public function containsAll(array $items): bool
 	{
 		foreach ($items as $item) {
 			if (!$items instanceof ListItemInterface) {
@@ -93,16 +93,18 @@ final class ListItemSequence implements ListItemSequenceInterface
 
 	/**
 	 * @return ListItemInterface
+	 * @throws MarkdomModelException
 	 */
-	public function first()
+	public function first(): ListItemInterface
 	{
 		return $this->get(0);
 	}
 
 	/**
 	 * @return ListItemInterface
+	 * @throws MarkdomModelException
 	 */
-	public function last()
+	public function last(): ListItemInterface
 	{
 		return $this->get($this->size() - 1);
 	}
@@ -112,9 +114,9 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @return ListItemInterface
 	 * @throws MarkdomModelException
 	 */
-	public function get($index)
+	public function get(int $index): ListItemInterface
 	{
-		if (!isset($this->items[$index])) {
+		if (!array_key_exists($index, $this->items)) {
 			throw new MarkdomModelException('List item not found');
 		}
 		return $this->items[$index];
@@ -125,7 +127,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @return int
 	 * @throws MarkdomModelException
 	 */
-	public function indexOf(ListItemInterface $item)
+	public function indexOf(ListItemInterface $item): int
 	{
 		$index = array_search($item, $this->items, true);
 		if ($index === false) {
@@ -137,8 +139,9 @@ final class ListItemSequence implements ListItemSequenceInterface
 	/**
 	 * @param ListItemInterface $item
 	 * @return bool
+	 * @throws MarkdomModelException
 	 */
-	public function isFirst(ListItemInterface $item)
+	public function isFirst(ListItemInterface $item): bool
 	{
 		return $this->indexOf($item) === 0;
 	}
@@ -146,8 +149,9 @@ final class ListItemSequence implements ListItemSequenceInterface
 	/**
 	 * @param ListItemInterface $item
 	 * @return bool
+	 * @throws MarkdomModelException
 	 */
-	public function isLast(ListItemInterface $item)
+	public function isLast(ListItemInterface $item): bool
 	{
 		return $this->indexOf($item) === $this->size() - 1;
 	}
@@ -219,7 +223,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @param int $index
 	 * @return $this
 	 */
-	public function insert(ListItemInterface $item, $index)
+	public function insert(ListItemInterface $item, int $index)
 	{
 		array_splice($this->items, $index, 0, array($item));
 		$item->onAttach($this->getParent());
@@ -232,7 +236,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @return $this
 	 * @throws MarkdomModelException
 	 */
-	public function insertAll(array $items, $index)
+	public function insertAll(array $items, int $index)
 	{
 		foreach ($items as $item) {
 			if (!$items instanceof ListItemInterface) {
@@ -251,6 +255,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @param ListItemInterface $item
 	 * @param ListItemInterface $referenceItem
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAfter(ListItemInterface $item, ListItemInterface $referenceItem)
 	{
@@ -262,6 +267,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @param ListItemInterface[] $items
 	 * @param ListItemInterface $referenceItem
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAllAfter(array $items, ListItemInterface $referenceItem)
 	{
@@ -273,6 +279,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @param ListItemInterface $item
 	 * @param ListItemInterface $referenceItem
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertBefore(ListItemInterface $item, ListItemInterface $referenceItem)
 	{
@@ -284,6 +291,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @param ListItemInterface[] $items
 	 * @param ListItemInterface $referenceItem
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAllBefore(array $items, ListItemInterface $referenceItem)
 	{
@@ -295,6 +303,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @param ListItemInterface $item
 	 * @param ListItemInterface $replacedItem
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function replaceItem(ListItemInterface $item, ListItemInterface $replacedItem)
 	{
@@ -311,8 +320,9 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @param ListItemInterface $item
 	 * @param int $index
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
-	public function replace(ListItemInterface $item, $index)
+	public function replace(ListItemInterface $item, int $index)
 	{
 		$replacedBlock = $this->get($index);
 		if (is_null($replacedBlock)) {
@@ -328,7 +338,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	/**
 	 * @return ListItemInterface
 	 */
-	public function removeFirst()
+	public function removeFirst(): ListItemInterface
 	{
 		$removedBlock = array_shift($this->items);
 		$removedBlock->onDetach();
@@ -338,7 +348,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	/**
 	 * @return ListItemInterface
 	 */
-	public function removeLast()
+	public function removeLast(): ListItemInterface
 	{
 		$removedBlock = array_pop($this->items);
 		$removedBlock->onDetach();
@@ -367,7 +377,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @return ListItemInterface
 	 * @throws MarkdomModelException
 	 */
-	public function removeItem(ListItemInterface $item)
+	public function removeItem(ListItemInterface $item): ListItemInterface
 	{
 		$index = $this->indexOf($item);
 		$this->remove($index);
@@ -379,7 +389,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @return ListItemInterface
 	 * @throws MarkdomModelException
 	 */
-	public function remove($index)
+	public function remove(int $index): ListItemInterface
 	{
 		$removedBlock = $this->get($index);
 		if (is_null($removedBlock)) {
@@ -405,7 +415,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
 	 * @return Traversable
 	 */
-	public function getIterator()
+	public function getIterator(): Traversable
 	{
 		return new ListIterator($this->items);
 	}
@@ -416,7 +426,7 @@ final class ListItemSequence implements ListItemSequenceInterface
 	 * @link http://php.net/manual/en/countable.count.php
 	 * @return int
 	 */
-	public function count()
+	public function count(): int
 	{
 		return $this->size();
 	}

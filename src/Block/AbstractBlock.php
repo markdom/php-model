@@ -27,7 +27,7 @@ abstract class AbstractBlock extends AbstractNode implements BlockInterface
 	/**
 	 * @return string
 	 */
-	final public function getNodeType()
+	final public function getNodeType(): string
 	{
 		return NodeInterface::NODE_TYPE_BLOCK;
 	}
@@ -35,7 +35,7 @@ abstract class AbstractBlock extends AbstractNode implements BlockInterface
 	/**
 	 * @return int
 	 */
-	final public function getIndex()
+	final public function getIndex(): int
 	{
 		return $this->getParent()->getBlocks()->indexOf($this);
 	}
@@ -43,7 +43,7 @@ abstract class AbstractBlock extends AbstractNode implements BlockInterface
 	/**
 	 * @return BlockParentInterface
 	 */
-	final public function getParent()
+	final public function getParent(): BlockParentInterface
 	{
 		return $this->parent;
 	}
@@ -51,23 +51,24 @@ abstract class AbstractBlock extends AbstractNode implements BlockInterface
 	/**
 	 * @return bool
 	 */
-	final public function hasParent()
+	final public function hasParent(): bool
 	{
-		return !is_null($this->getParent());
+		return $this->getParent() !== null;
 	}
 
 	/**
 	 * @return DocumentInterface
 	 */
-	final public function getDocument()
+	final public function getDocument(): DocumentInterface
 	{
-		return $this->getParent()->getDocument();
+		$parent = $this->getParent();
+		return $parent->getDocument();
 	}
 
 	/**
 	 * @return CountableIteratorInterface
 	 */
-	public function getChildren()
+	public function getChildren(): CountableIteratorInterface
 	{
 		return new EmptyCountableIterator();
 	}

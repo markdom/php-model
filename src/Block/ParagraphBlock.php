@@ -20,7 +20,7 @@ class ParagraphBlock extends AbstractBlock implements ParagraphBlockInterface
 	/**
 	 * @return BlockInterface
 	 */
-	public function getBlock()
+	public function getBlock(): BlockInterface
 	{
 		return $this;
 	}
@@ -28,7 +28,7 @@ class ParagraphBlock extends AbstractBlock implements ParagraphBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getContentParentType()
+	public function getContentParentType(): string
 	{
 		return self::CONTENT_PARENT_TYPE_PARAGRAPH;
 	}
@@ -36,7 +36,7 @@ class ParagraphBlock extends AbstractBlock implements ParagraphBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockType()
+	public function getBlockType(): string
 	{
 		return self::BLOCK_TYPE_PARAGRAPH;
 	}
@@ -45,7 +45,7 @@ class ParagraphBlock extends AbstractBlock implements ParagraphBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onParagraphBlockBegin();

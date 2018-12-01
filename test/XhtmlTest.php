@@ -2,22 +2,28 @@
 
 namespace Markdom\Test;
 
+use Markdom\Dispatcher\Exception\DispatcherException;
 use Markdom\Dispatcher\XmlDispatcher;
 use Markdom\Handler\XhtmlHandler;
 use Markdom\Model\Handler\ModelHandler;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class XhtmlTest
  *
  * @package Markdom\Test
  */
-class XhtmlTest extends \PHPUnit_Framework_TestCase
+class XhtmlTest extends TestCase
 {
 
-	public function testParseHandle()
+	/**
+	 * @throws DispatcherException
+	 */
+	public function testParseHandle(): void
 	{
 		// Dispatch a XML file as Markdom Document
 		$xmlString = file_get_contents(__DIR__ . '/test-data.xml');
+		/** @noinspection PhpComposerExtensionStubsInspection */
 		$xmlDocument = new \DOMDocument();
 		$xmlDocument->preserveWhiteSpace = false;
 		$xmlDocument->loadXML($xmlString);
@@ -33,7 +39,7 @@ class XhtmlTest extends \PHPUnit_Framework_TestCase
 			->setBreakSoftBreaks(false);
 		$document->dispatchTo($handler);
 		$htmlString = $handler->getResult();
-		$this->assertEquals(file_get_contents(__DIR__ . '/test-data.xhtml'), $htmlString);
+		$this->assertStringEqualsFile(__DIR__ . '/test-data.xhtml', $htmlString);
 	}
 
 }

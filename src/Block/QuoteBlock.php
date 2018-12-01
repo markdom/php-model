@@ -18,7 +18,7 @@ class QuoteBlock extends AbstractBlock implements QuoteBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockParentType()
+	public function getBlockParentType(): string
 	{
 		return self::BLOCK_PARENT_TYPE_QUOTE;
 	}
@@ -26,7 +26,7 @@ class QuoteBlock extends AbstractBlock implements QuoteBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockType()
+	public function getBlockType(): string
 	{
 		return self::BLOCK_TYPE_QUOTE;
 	}
@@ -35,7 +35,7 @@ class QuoteBlock extends AbstractBlock implements QuoteBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onQuoteBlockBegin();

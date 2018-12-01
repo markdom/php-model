@@ -16,7 +16,7 @@ class DivisionBlock extends AbstractBlock implements DivisionBlockInterface
 	/**
 	 * @return string
 	 */
-	public function getBlockType()
+	public function getBlockType(): string
 	{
 		return self::BLOCK_TYPE_DIVISION;
 	}
@@ -25,7 +25,7 @@ class DivisionBlock extends AbstractBlock implements DivisionBlockInterface
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onDivisionBlock();

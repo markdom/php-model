@@ -23,7 +23,7 @@ class LinebreakContent extends AbstractContent implements LinebreakContentInterf
 	 *
 	 * @param bool $hard
 	 */
-	public function __construct($hard)
+	public function __construct(bool $hard)
 	{
 		$this->hard = $hard;
 	}
@@ -31,7 +31,7 @@ class LinebreakContent extends AbstractContent implements LinebreakContentInterf
 	/**
 	 * @return bool
 	 */
-	public function isHard()
+	public function isHard(): bool
 	{
 		return $this->hard;
 	}
@@ -40,7 +40,7 @@ class LinebreakContent extends AbstractContent implements LinebreakContentInterf
 	 * @param bool $hard
 	 * @return $this
 	 */
-	public function setHard($hard)
+	public function setHard(bool $hard)
 	{
 		$this->hard = $hard;
 		return $this;
@@ -49,7 +49,7 @@ class LinebreakContent extends AbstractContent implements LinebreakContentInterf
 	/**
 	 * @return string
 	 */
-	public function getContentType()
+	public function getContentType(): string
 	{
 		return self::CONTENT_TYPE_LINE_BREAK;
 	}
@@ -57,7 +57,7 @@ class LinebreakContent extends AbstractContent implements LinebreakContentInterf
 	/**
 	 * @param HandlerInterface $markdomHandler
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onContentBegin($this->getContentType());
 		$markdomHandler->onLineBreakContent($this->isHard());

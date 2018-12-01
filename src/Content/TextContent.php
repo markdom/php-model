@@ -23,7 +23,7 @@ class TextContent extends AbstractContent implements TextContentInterface
 	 *
 	 * @param string $text
 	 */
-	public function __construct($text)
+	public function __construct(string $text)
 	{
 		$this->text = $text;
 	}
@@ -31,7 +31,7 @@ class TextContent extends AbstractContent implements TextContentInterface
 	/**
 	 * @return string
 	 */
-	public function getText()
+	public function getText(): string
 	{
 		return $this->text;
 	}
@@ -40,7 +40,7 @@ class TextContent extends AbstractContent implements TextContentInterface
 	 * @param string $text
 	 * @return $this
 	 */
-	public function setText($text)
+	public function setText(string $text)
 	{
 		$this->text = $text;
 		return $this;
@@ -49,7 +49,7 @@ class TextContent extends AbstractContent implements TextContentInterface
 	/**
 	 * @return string
 	 */
-	public function getContentType()
+	public function getContentType(): string
 	{
 		return self::CONTENT_TYPE_TEXT;
 	}
@@ -57,7 +57,7 @@ class TextContent extends AbstractContent implements TextContentInterface
 	/**
 	 * @param HandlerInterface $markdomHandler
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onContentBegin($this->getContentType());
 		$markdomHandler->onTextContent($this->getText());

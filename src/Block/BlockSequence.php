@@ -40,7 +40,7 @@ final class BlockSequence implements BlockSequenceInterface
 	/**
 	 * @return BlockParentInterface
 	 */
-	public function getParent()
+	public function getParent(): BlockParentInterface
 	{
 		return $this->parent;
 	}
@@ -48,7 +48,7 @@ final class BlockSequence implements BlockSequenceInterface
 	/**
 	 * @return int
 	 */
-	public function size()
+	public function size(): int
 	{
 		return count($this->blocks);
 	}
@@ -56,7 +56,7 @@ final class BlockSequence implements BlockSequenceInterface
 	/**
 	 * @return bool
 	 */
-	public function isEmpty()
+	public function isEmpty(): bool
 	{
 		return count($this->blocks) === 0;
 	}
@@ -65,7 +65,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @param BlockInterface $block
 	 * @return bool
 	 */
-	public function contains(BlockInterface $block)
+	public function contains(BlockInterface $block): bool
 	{
 		$index = array_search($block, $this->blocks, true);
 		return $index !== false;
@@ -76,7 +76,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @return bool
 	 * @throws MarkdomModelException
 	 */
-	public function containsAll(array $blocks)
+	public function containsAll(array $blocks): bool
 	{
 		foreach ($blocks as $block) {
 			if (!$blocks instanceof BlockInterface) {
@@ -93,16 +93,18 @@ final class BlockSequence implements BlockSequenceInterface
 
 	/**
 	 * @return BlockInterface
+	 * @throws MarkdomModelException
 	 */
-	public function first()
+	public function first(): BlockInterface
 	{
 		return $this->get(0);
 	}
 
 	/**
 	 * @return BlockInterface
+	 * @throws MarkdomModelException
 	 */
-	public function last()
+	public function last(): BlockInterface
 	{
 		return $this->get($this->size() - 1);
 	}
@@ -112,9 +114,9 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @return BlockInterface
 	 * @throws MarkdomModelException
 	 */
-	public function get($index)
+	public function get(int $index): BlockInterface
 	{
-		if (!isset($this->blocks[$index])) {
+		if (!array_key_exists($index, $this->blocks)) {
 			throw new MarkdomModelException('Block not found');
 		}
 		return $this->blocks[$index];
@@ -125,7 +127,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @return int
 	 * @throws MarkdomModelException
 	 */
-	public function indexOf(BlockInterface $block)
+	public function indexOf(BlockInterface $block): int
 	{
 		$index = array_search($block, $this->blocks, true);
 		if ($index === false) {
@@ -137,8 +139,9 @@ final class BlockSequence implements BlockSequenceInterface
 	/**
 	 * @param BlockInterface $block
 	 * @return bool
+	 * @throws MarkdomModelException
 	 */
-	public function isFirst(BlockInterface $block)
+	public function isFirst(BlockInterface $block): bool
 	{
 		return $this->indexOf($block) === 0;
 	}
@@ -146,8 +149,9 @@ final class BlockSequence implements BlockSequenceInterface
 	/**
 	 * @param BlockInterface $block
 	 * @return bool
+	 * @throws MarkdomModelException
 	 */
-	public function isLast(BlockInterface $block)
+	public function isLast(BlockInterface $block): bool
 	{
 		return $this->indexOf($block) === $this->size() - 1;
 	}
@@ -219,7 +223,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @param int $index
 	 * @return $this
 	 */
-	public function insert(BlockInterface $block, $index)
+	public function insert(BlockInterface $block, int $index)
 	{
 		array_splice($this->blocks, $index, 0, array($block));
 		$block->onAttach($this->getParent());
@@ -232,7 +236,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @return $this
 	 * @throws MarkdomModelException
 	 */
-	public function insertAll(array $blocks, $index)
+	public function insertAll(array $blocks, int $index)
 	{
 		foreach ($blocks as $block) {
 			if (!$blocks instanceof BlockInterface) {
@@ -251,6 +255,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @param BlockInterface $block
 	 * @param BlockInterface $referenceBlock
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAfter(BlockInterface $block, BlockInterface $referenceBlock)
 	{
@@ -262,6 +267,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @param BlockInterface[] $blocks
 	 * @param BlockInterface $referenceBlock
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAllAfter(array $blocks, BlockInterface $referenceBlock)
 	{
@@ -273,6 +279,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @param BlockInterface $block
 	 * @param BlockInterface $referenceBlock
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertBefore(BlockInterface $block, BlockInterface $referenceBlock)
 	{
@@ -284,6 +291,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @param BlockInterface[] $blocks
 	 * @param BlockInterface $referenceBlock
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function insertAllBefore(array $blocks, BlockInterface $referenceBlock)
 	{
@@ -295,6 +303,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @param BlockInterface $block
 	 * @param BlockInterface $replacedBlock
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
 	public function replaceItem(BlockInterface $block, BlockInterface $replacedBlock)
 	{
@@ -311,8 +320,9 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @param BlockInterface $block
 	 * @param int $index
 	 * @return $this
+	 * @throws MarkdomModelException
 	 */
-	public function replace(BlockInterface $block, $index)
+	public function replace(BlockInterface $block, int $index)
 	{
 		$replacedBlock = $this->get($index);
 		if (is_null($replacedBlock)) {
@@ -328,7 +338,7 @@ final class BlockSequence implements BlockSequenceInterface
 	/**
 	 * @return BlockInterface
 	 */
-	public function removeFirst()
+	public function removeFirst(): BlockInterface
 	{
 		$removedBlock = array_shift($this->blocks);
 		$removedBlock->onDetach();
@@ -338,7 +348,7 @@ final class BlockSequence implements BlockSequenceInterface
 	/**
 	 * @return BlockInterface
 	 */
-	public function removeLast()
+	public function removeLast(): BlockInterface
 	{
 		$removedBlock = array_pop($this->blocks);
 		$removedBlock->onDetach();
@@ -367,7 +377,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @return BlockInterface
 	 * @throws MarkdomModelException
 	 */
-	public function removeItem(BlockInterface $block)
+	public function removeItem(BlockInterface $block): BlockInterface
 	{
 		$index = $this->indexOf($block);
 		$this->remove($index);
@@ -379,7 +389,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @return BlockInterface
 	 * @throws MarkdomModelException
 	 */
-	public function remove($index)
+	public function remove(int $index): BlockInterface
 	{
 		$removedBlock = $this->get($index);
 		if (is_null($removedBlock)) {
@@ -405,7 +415,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
 	 * @return Traversable
 	 */
-	public function getIterator()
+	public function getIterator(): Traversable
 	{
 		return new ListIterator($this->blocks);
 	}
@@ -416,7 +426,7 @@ final class BlockSequence implements BlockSequenceInterface
 	 * @link http://php.net/manual/en/countable.count.php
 	 * @return int
 	 */
-	public function count()
+	public function count(): int
 	{
 		return $this->size();
 	}

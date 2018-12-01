@@ -18,7 +18,7 @@ class UnorderedListBlock extends AbstractBlock implements UnorderedListBlockInte
 	/**
 	 * @return string
 	 */
-	public function getListBlockType()
+	public function getListBlockType(): string
 	{
 		return self::LIST_BLOCK_TYPE_UNORDERED_LIST;
 	}
@@ -26,7 +26,7 @@ class UnorderedListBlock extends AbstractBlock implements UnorderedListBlockInte
 	/**
 	 * @return string
 	 */
-	public function getBlockType()
+	public function getBlockType(): string
 	{
 		return self::BLOCK_TYPE_UNORDERED_LIST;
 	}
@@ -35,7 +35,7 @@ class UnorderedListBlock extends AbstractBlock implements UnorderedListBlockInte
 	 * @param HandlerInterface $markdomHandler
 	 * @return void
 	 */
-	public function onHandle(HandlerInterface $markdomHandler)
+	public function onHandle(HandlerInterface $markdomHandler): void
 	{
 		$markdomHandler->onBlockBegin($this->getBlockType());
 		$markdomHandler->onUnorderedListBlockBegin();
