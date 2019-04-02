@@ -22,11 +22,11 @@
 	},
 	"require": {
 		"php": "^7.1",
-		"markdom/model-interface": "^1.1.4"
+		"markdom/model-interface": "^1.1"
 	},
 	"require-dev": {
 		"ext-dom": "*",
-		"markdom/handler": "^1.1.1",
+		"markdom/handler": "^1.1",
 		"phpunit/phpunit": "~6.5",
 		"codeclimate/php-test-reporter": ">=0.4.1"
 	}
