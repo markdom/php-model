@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Markdom\Model\Block;
 
 use Markdom\Model\Common\ListIterator;

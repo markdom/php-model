@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Markdom\Model\Content;
 
 use Markdom\ModelInterface\Content\ContentInterface;

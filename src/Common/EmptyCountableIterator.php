@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Markdom\Model\Common;
 
 use Markdom\ModelInterface\Common\CountableIteratorInterface;
