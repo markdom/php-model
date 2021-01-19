@@ -68,7 +68,6 @@ abstract class AbstractBlock extends AbstractNode implements BlockInterface
 	}
 
 	/**
-	 * @noinspection ReturnTypeCanBeDeclaredInspection
 	 * @return CountableIteratorInterface
 	 */
 	public function getChildren()

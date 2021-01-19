@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Markdom\Model\Handler;
 
+use ChromaX\StackUtil\Stack;
 use Markdom\HandlerInterface\HandlerInterface;
 use Markdom\Model\Block\CodeBlock;
 use Markdom\Model\Block\CommentBlock;
@@ -24,7 +25,6 @@ use Markdom\Model\Content\TextContent;
 use Markdom\ModelInterface\Block\BlockParentInterface;
 use Markdom\ModelInterface\Block\ListBlockInterface;
 use Markdom\ModelInterface\Content\ContentParentInterface;
-use Markenwerk\StackUtil\Stack;
 
 /**
  * Class ModelHandler

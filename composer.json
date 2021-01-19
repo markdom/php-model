@@ -22,6 +22,7 @@
 	},
 	"require": {
 		"php": "^7.1",
+		"chroma-x/stack-util": "~1.0",
 		"markdom/model-interface": "^1.1"
 	},
 	"require-dev": {
